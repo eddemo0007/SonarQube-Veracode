@@ -43,7 +43,7 @@
         <extensions>true</extensions>
         <configuration>
           <pluginKey>veracode-results</pluginKey>
-          <pluginClass>com.veracode.plugin.VeracodePlugin</pluginClass>
+          <pluginClass>com.veracode.sonarplugin.VeracodePlugin</pluginClass>
         </configuration>
       </plugin>
       <plugin>
