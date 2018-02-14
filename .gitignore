@@ -1,6 +1,11 @@
 # ignore the target (output) dir
 target/
 
+# ignore test stuff
+plugin-test/.scannerwork/
+plugin-test/verademo-test
+
+
 # ignore VS Code stuff
 .vscode/
 

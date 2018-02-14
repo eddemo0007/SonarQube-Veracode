@@ -5,7 +5,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.veracode.plugins</groupId>
-  <artifactId>sonarqube-plugin</artifactId>
+  <artifactId>sonar-veracode-plugin</artifactId>
   <packaging>sonar-plugin</packaging>
   <version>0.0.1</version>
 

@@ -25,11 +25,11 @@ public class VeracodeSensor implements Sensor {
     @Override
     public void execute(SensorContext context)
     {
-        log.debug("execute");
+        log.debug("Veracode Sensor execute");
 
         m_config = new VeracodeSensorConfiguration(context);
 
-        
+
         
 
         // the Veracode detailed report is a new "language" - deal with it

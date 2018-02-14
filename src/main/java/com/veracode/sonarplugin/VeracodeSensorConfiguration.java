@@ -34,7 +34,7 @@ public class VeracodeSensorConfiguration {
         m_veracodeScanType = context.config().get(VERACODE_SCAN_TYPE).orElse(null);
 
         log.debug("Veracode app name = " + m_veracodeAppName);
-        log.debug("Veracode scan type(s) = [" + m_veracodeScanType + "]");
+        log.debug("Veracode scan type(s) = " + m_veracodeScanType);
 
 
     }
