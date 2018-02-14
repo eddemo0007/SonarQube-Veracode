@@ -14,6 +14,18 @@ Assuming you don't want to build this from scratch (see below for instructions),
 
 placeholder
 
+# Using
+
+set properties in the scanner props file
+    AppName
+    API ID/Key
+    
+
+manually create the detailed report in the folder with the code to analyize (or it's own folder)
+    rename to .vxml
+
+run the sonar-scanner - the .vxml file will get processed and added to the results
+
 # Configuration
 
 XX
