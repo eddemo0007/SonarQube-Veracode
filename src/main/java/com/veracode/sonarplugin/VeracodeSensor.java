@@ -29,10 +29,8 @@ public class VeracodeSensor implements Sensor {
 
         m_config = new VeracodeSensorConfiguration(context);
 
+        // pull the required reports from the Veracode Platform and analyze them
 
-        
-
-        // the Veracode detailed report is a new "language" - deal with it
 
     }
 

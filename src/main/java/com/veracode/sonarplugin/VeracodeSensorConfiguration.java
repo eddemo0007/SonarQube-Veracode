@@ -6,6 +6,11 @@ import org.sonar.api.batch.sensor.SensorContext;
 import org.sonar.api.utils.log.Logger;
 import org.sonar.api.utils.log.Loggers;
 
+/*
+ * Scanner-side class to read the config options from the sonar-properties.config file
+ * and make the veracode ones available to the sonar-scanner
+ */
+
 @ScannerSide
 public class VeracodeSensorConfiguration {
 
@@ -26,16 +31,21 @@ public class VeracodeSensorConfiguration {
 
     public VeracodeSensorConfiguration(SensorContext context) {
 
-        log.debug("SensorConfiguration");
+        log.debug("Veracode SensorConfiguration");
 
         m_context = context;
 
         m_veracodeAppName = context.config().get(VERACODE_APP_NAME).orElse(null);
         m_veracodeScanType = context.config().get(VERACODE_SCAN_TYPE).orElse(null);
+        m_veracodeApiId = context.config().get(VERACODE_API_ID).orElse(null);
+        m_veracodeApiKey = context.config().get(VERACODE_API_KEY).orElse(null);
 
         log.debug("Veracode app name = " + m_veracodeAppName);
         log.debug("Veracode scan type(s) = " + m_veracodeScanType);
 
+        // TODO: encryption on the API key?  Or allow via command-line instead
+        
+        // parse the scan type(s)
 
     }
 }

@@ -42,7 +42,7 @@
         <version>1.18.0.372</version>
         <extensions>true</extensions>
         <configuration>
-          <pluginKey>veracode-results</pluginKey>
+          <pluginKey>veracode</pluginKey>
           <pluginClass>com.veracode.sonarplugin.VeracodePlugin</pluginClass>
         </configuration>
       </plugin>

@@ -5,7 +5,6 @@ target/
 plugin-test/.scannerwork/
 plugin-test/verademo-test
 
-
 # ignore VS Code stuff
 .vscode/
 

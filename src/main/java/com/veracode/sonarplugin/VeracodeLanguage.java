@@ -1,8 +1,8 @@
 package com.veracode.sonarplugin;
 
-import java.util.ArrayList;
-import java.util.List;
-import org.apache.commons.lang.StringUtils;
+//import java.util.ArrayList;
+//import java.util.List;
+//import org.apache.commons.lang.StringUtils;
 import org.sonar.api.config.Configuration;
 import org.sonar.api.resources.AbstractLanguage;
 
@@ -12,7 +12,7 @@ import org.sonar.api.resources.AbstractLanguage;
  * So, define a dummy language
  */
 
-public class  VeracodeLanguage extends AbstractLanguage {
+public class VeracodeLanguage extends AbstractLanguage {
 
     public static final String NAME = "Veracode";
     public static final String KEY = "veracode";
@@ -24,6 +24,7 @@ public class  VeracodeLanguage extends AbstractLanguage {
         m_config = config;
     }
 
+    // not sure if I need this, but make a dummy file extension
     @Override
     public String[] getFileSuffixes() {
         String[] suffixes = new String[] {".vxml"};
