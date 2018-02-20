@@ -67,7 +67,7 @@ public class VeracodeSensor implements Sensor {
                 // parse the XML and get the appID
                 ParseVeracodeXML parser = new ParseVeracodeXML(appListXML);
 
-                m_appID = parser.getAppIDFromList(m_config.getAppName());
+                m_appID = parser.getAppIDFromList(m_appName);
                 log.info("Found existing app with ID = " + m_appID);
             }
             catch (ParseException p) {
@@ -80,14 +80,45 @@ public class VeracodeSensor implements Sensor {
             }
         }
         catch (IOException e) {
-            log.error("Error getting the app list: " + m_appName +
-                " Exception " + e.toString());
-
+            log.error("Error getting the app list: Exception " + e.toString());
             return;
         }
 
-
         // get latest build (Future: of required type(s))
+
+        // assumes that the most current build is done scanning - how valid is this?
+
+        log.info("[Veracode] Getting info from latest build");
+
+        try {
+            String buildInfoXML = m_uploadWrapper.getBuildInfo(m_appID);
+            log.debug("Build Info XML: " + buildInfoXML);
+
+            try {
+                // parse the XML and get the buildID
+                ParseVeracodeXML parser = new ParseVeracodeXML(buildInfoXML);
+
+                ParseVeracodeXML.BuildInformation buildInfo = parser.getBuildIDFromInfo(m_appID);
+
+                // failed if the build is not ready yet
+                if(buildInfo == null)
+                    return;
+
+                log.info("Latest Build: " + buildInfo.m_buildName + " [ID = " + buildInfo.m_buildID + "]");
+            }
+            catch (ParseException p) {
+                log.error("Parsing error " + p.toString());
+                return;
+            }
+            catch (XMLStreamException x) {
+                log.error("XML Stream error " + x.toString());
+                return;
+            }
+        }
+        catch (IOException e) {
+            log.error("Error getting the build info: Exception " + e.toString());
+            return;
+        }
 
         // get the detailed report(s)
         //m_resultsWrapper = new ResultsAPIWrapper();

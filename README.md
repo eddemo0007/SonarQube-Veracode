@@ -26,6 +26,8 @@ manually create the detailed report in the folder with the code to analyize (or 
 
 run the sonar-scanner - the .vxml file will get processed and added to the results
 
+Assumes that the results are ready from the most recent scan (i.e., there is not another scan happening while the SQ scanner is being run.  How valid is this??
+
 # Configuration
 
 XX

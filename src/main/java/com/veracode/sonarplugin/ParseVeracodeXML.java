@@ -96,9 +96,96 @@ public class ParseVeracodeXML {
 		}
 	}
 
+	/** 
+	 * helper class for returning build info
+	 */
+	public class BuildInformation {
+		public String m_buildID;
+		public String m_buildName;
 
+		public BuildInformation(String id, String name) {
+			m_buildID = id;
+			m_buildName = name;
+		}
+	}
 
-
-
+	// get the build ID from buildinfo.xsd doc (e.g., from getBuildInfo() )
+	public BuildInformation getBuildIDFromInfo(final String appID)
+	throws ParseException, XMLStreamException
+	{
+		log.info("getting latest build info for appID = " + appID);
 	
+		try
+		{
+			m_eventReader = m_factory.createXMLEventReader(m_inputStream);
+						
+			while(m_eventReader.hasNext())
+			{
+				XMLEvent event = m_eventReader.nextEvent();
+				
+				switch(event.getEventType())
+				{
+				case XMLStreamConstants.START_ELEMENT:
+					
+					StartElement startElem = event.asStartElement();
+					String eName = startElem.getName().getLocalPart();
+					
+					// find the 'build' element
+					if(eName.equalsIgnoreCase("build"))
+					{
+						Attribute attribID = startElem.getAttributeByName(new QName("build_id"));
+						String id = attribID.getValue();
+						log.debug("attribID = " + id);
+
+						Attribute attribReady = startElem.getAttributeByName(new QName("results_ready"));
+						String ready = attribReady.getValue();
+						log.debug("attribReady = " + ready);
+
+						Attribute attribVersion = startElem.getAttributeByName(new QName("version"));
+						String version = attribVersion.getValue();
+						log.debug("attribVersion = " + version);
+
+						// are the reaults ready?
+						if(ready.equalsIgnoreCase("true"))
+						{
+							BuildInformation retVal = new BuildInformation(id, version);
+							return retVal;
+						}
+					}
+
+					// if I got this far, the build is not ready yet.  Get the current status.
+					if(eName.equalsIgnoreCase("analysis_unit"))
+					{
+						Attribute attribStatus = startElem.getAttributeByName(new QName("status"));
+						String status = attribStatus.getValue();
+						log.debug("attribStatus = " + status);	
+		
+						log.info("Latest build not ready to analyze, status = " + status);
+						return null;
+					}
+					
+					break;
+					
+				case XMLStreamConstants.CHARACTERS:
+					break;
+					
+				case XMLStreamConstants.END_ELEMENT:
+					break;
+				}
+			}
+			
+			//log.error("No build element in build with name " + buildName);
+			throw new ParseException("No build element in build with name " /*+ buildName*/, 0);
+		}
+		catch(XMLStreamException e)
+		{
+			//log.error("Error reading from xml string " + e.toString());
+			throw new XMLStreamException("Error reading from xml string " + e.toString());
+		}
+	}
+
+
+
+
+
 }
