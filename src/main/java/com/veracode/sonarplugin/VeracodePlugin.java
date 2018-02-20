@@ -17,7 +17,7 @@ public class VeracodePlugin implements Plugin  {
         log.debug("Hello from the Veracode plugin");
 
         context.addExtensions(VeracodeSensor.class,
-                                /*VeracodeSensorConfiguration.class,*/
+                                //VeracodeSensorConfiguration.class,
                                 VeracodeLanguage.class,
                                 VeracodeRules.class,
                                 VeracodeQualityProfile.class);

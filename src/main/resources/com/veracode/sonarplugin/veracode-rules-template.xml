@@ -1,0 +1,35 @@
+<veracode-rules>
+    <rule>
+        <!-- required -->
+		<key>ExampleRule1</key>
+		<name>Example Rule 1</name>
+		<description>This is an example of rule defined thru the XML.
+		</description>
+
+        <!-- optional -->
+        <!-- <internalKey>ExampleRule1</internalKey> -->
+		<severity>BLOCKER</severity>  <!-- map to Veracode values -->
+		<!-- <cardinality>SINGLE</cardinality> -->
+		<!-- <status>READY</status> -->
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
+		<!-- <remediationFunction>CONSTANT_ISSUE</remediationFunction> -->
+        <!-- <remediationFunctionBaseEffort>2min</remediationFunctionBaseEffort> -->
+	</rule>
+	<rule>
+		<key>ExampleRule2</key>
+		<name>Example Rule 2</name>
+		<description>This is a other example of rule defined thru the XML.
+		</description>
+        <type>VULNERABILITY</type>
+		<tag>veracode</tag>		
+	</rule>
+	<rule>
+		<key>ExampleRule3</key>
+		<name>Example Rule 3</name>
+		<description>This is a other example of rule defined thru the XML.
+		</description>
+        <type>VULNERABILITY</type>
+		<tag>veracode</tag>		
+	</rule>
+</veracode-rules>

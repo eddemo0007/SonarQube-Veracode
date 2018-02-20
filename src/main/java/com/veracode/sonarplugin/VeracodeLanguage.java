@@ -27,20 +27,8 @@ public class VeracodeLanguage extends AbstractLanguage {
     // not sure if I need this, but make a dummy file extension
     @Override
     public String[] getFileSuffixes() {
-        String[] suffixes = new String[] {".vxml"};
+        String[] suffixes = new String[] {".veracode"};
         return suffixes;
     }
-
-    /*
-    private String[] filterEmptyStrings(String[] stringArray) {
-        List<String> nonEmptyStrings = new ArrayList<>();
-        for (String string : stringArray) {
-          if (StringUtils.isNotBlank(string.trim())) {
-            nonEmptyStrings.add(string.trim());
-          }
-        }
-        return nonEmptyStrings.toArray(new String[nonEmptyStrings.size()]);
-      }
-      */
 
 }

@@ -1,35 +1,1082 @@
 <veracode-rules>
-    <rule>
-        <!-- required -->
-		<key>ExampleRule1</key>
-		<name>Example Rule 1</name>
-		<description>This is an example of rule defined thru the XML.
-		</description>
-
-        <!-- optional -->
-        <!-- <internalKey>ExampleRule1</internalKey> -->
-		<severity>BLOCKER</severity>  <!-- map to Veracode values -->
-		<!-- <cardinality>SINGLE</cardinality> -->
-		<!-- <status>READY</status> -->
+	<rule>
+		<key>15</key>
+		<name>External Control of System or Configuration Setting (CWE-15)</name>
+		<description>External Control of System or Configuration Setting</description>
+		<severity>CRITICAL</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
-		<!-- <remediationFunction>CONSTANT_ISSUE</remediationFunction> -->
-        <!-- <remediationFunctionBaseEffort>2min</remediationFunctionBaseEffort> -->
 	</rule>
 	<rule>
-		<key>ExampleRule2</key>
-		<name>Example Rule 2</name>
-		<description>This is a other example of rule defined thru the XML.
-		</description>
-        <type>VULNERABILITY</type>
-		<tag>veracode</tag>		
+		<key>16</key>
+		<name>Configuration (CWE-16)</name>
+		<description>Configuration</description>
+		<severity>INFO</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
 	</rule>
 	<rule>
-		<key>ExampleRule3</key>
-		<name>Example Rule 3</name>
-		<description>This is a other example of rule defined thru the XML.
-		</description>
-        <type>VULNERABILITY</type>
-		<tag>veracode</tag>		
+		<key>22</key>
+		<name>Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal') (CWE-22)</name>
+		<description>Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')</description>
+		<severity>MAJOR</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
+	</rule>
+	<rule>
+		<key>73</key>
+		<name>External Control of File Name or Path (CWE-73)</name>
+		<description>External Control of File Name or Path</description>
+		<severity>MAJOR</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
+	</rule>
+	<rule>
+		<key>78</key>
+		<name>Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection') (CWE-78)</name>
+		<description>Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')</description>
+		<severity>BLOCKER</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
+	</rule>
+	<rule>
+		<key>79</key>
+		<name>Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') (CWE-79)</name>
+		<description>Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')</description>
+		<severity>MAJOR</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
+	</rule>
+	<rule>
+		<key>80</key>
+		<name>Improper Neutralization of Script-Related HTML Tags in a Web Page (Basic XSS) (CWE-80)</name>
+		<description>Improper Neutralization of Script-Related HTML Tags in a Web Page (Basic XSS)</description>
+		<severity>MAJOR</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
+	</rule>
+	<rule>
+		<key>83</key>
+		<name>Improper Neutralization of Script in Attributes in a Web Page (CWE-83)</name>
+		<description>Improper Neutralization of Script in Attributes in a Web Page</description>
+		<severity>MAJOR</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
+	</rule>
+	<rule>
+		<key>86</key>
+		<name>Improper Neutralization of Invalid Characters in Identifiers in Web Pages (CWE-86)</name>
+		<description>Improper Neutralization of Invalid Characters in Identifiers in Web Pages</description>
+		<severity>MAJOR</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
+	</rule>
+	<rule>
+		<key>88</key>
+		<name>Argument Injection or Modification (CWE-88)</name>
+		<description>Argument Injection or Modification</description>
+		<severity>MAJOR</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
+	</rule>
+	<rule>
+		<key>89</key>
+		<name>Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection') (CWE-89)</name>
+		<description>Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')</description>
+		<severity>CRITICAL</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
+	</rule>
+	<rule>
+		<key>90</key>
+		<name>Improper Neutralization of Special Elements used in an LDAP Query ('LDAP Injection') (CWE-90)</name>
+		<description>Improper Neutralization of Special Elements used in an LDAP Query ('LDAP Injection')</description>
+		<severity>MAJOR</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
+	</rule>
+	<rule>
+		<key>91</key>
+		<name>XML Injection (aka Blind XPath Injection) (CWE-91)</name>
+		<description>XML Injection (aka Blind XPath Injection)</description>
+		<severity>MAJOR</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
+	</rule>
+	<rule>
+		<key>93</key>
+		<name>Improper Neutralization of CRLF Sequences ('CRLF Injection') (CWE-93)</name>
+		<description>Improper Neutralization of CRLF Sequences ('CRLF Injection')</description>
+		<severity>MAJOR</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
+	</rule>
+	<rule>
+		<key>94</key>
+		<name>Improper Control of Generation of Code ('Code Injection') (CWE-94)</name>
+		<description>Improper Control of Generation of Code ('Code Injection')</description>
+		<severity>MAJOR</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
+	</rule>
+	<rule>
+		<key>95</key>
+		<name>Improper Neutralization of Directives in Dynamically Evaluated Code ('Eval Injection') (CWE-95)</name>
+		<description>Improper Neutralization of Directives in Dynamically Evaluated Code ('Eval Injection')</description>
+		<severity>BLOCKER</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
+	</rule>
+	<rule>
+		<key>98</key>
+		<name>Improper Control of Filename for Include/Require Statement in PHP Program ('PHP Remote File Inclusion') (CWE-98)</name>
+		<description>Improper Control of Filename for Include/Require Statement in PHP Program ('PHP Remote File Inclusion')</description>
+		<severity>CRITICAL</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
+	</rule>
+	<rule>
+		<key>99</key>
+		<name>Improper Control of Resource Identifiers ('Resource Injection') (CWE-99)</name>
+		<description>Improper Control of Resource Identifiers ('Resource Injection')</description>
+		<severity>MAJOR</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
+	</rule>
+	<rule>
+		<key>103</key>
+		<name>Struts: Incomplete validate() Method Definition (CWE-103)</name>
+		<description>Struts: Incomplete validate() Method Definition</description>
+		<severity>MAJOR</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
+	</rule>
+	<rule>
+		<key>104</key>
+		<name>Struts: Form Bean Does Not Extend Validation Class (CWE-104)</name>
+		<description>Struts: Form Bean Does Not Extend Validation Class</description>
+		<severity>MAJOR</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
+	</rule>
+	<rule>
+		<key>111</key>
+		<name>Direct Use of Unsafe JNI (CWE-111)</name>
+		<description>Direct Use of Unsafe JNI</description>
+		<severity>CRITICAL</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
+	</rule>
+	<rule>
+		<key>112</key>
+		<name>Missing XML Validation (CWE-112)</name>
+		<description>Missing XML Validation</description>
+		<severity>MAJOR</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
+	</rule>
+	<rule>
+		<key>113</key>
+		<name>Improper Neutralization of CRLF Sequences in HTTP Headers ('HTTP Response Splitting') (CWE-113)</name>
+		<description>Improper Neutralization of CRLF Sequences in HTTP Headers ('HTTP Response Splitting')</description>
+		<severity>MAJOR</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
+	</rule>
+	<rule>
+		<key>114</key>
+		<name>Process Control (CWE-114)</name>
+		<description>Process Control</description>
+		<severity>BLOCKER</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
+	</rule>
+	<rule>
+		<key>117</key>
+		<name>Improper Output Neutralization for Logs (CWE-117)</name>
+		<description>Improper Output Neutralization for Logs</description>
+		<severity>MAJOR</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
+	</rule>
+	<rule>
+		<key>121</key>
+		<name>Stack-based Buffer Overflow (CWE-121)</name>
+		<description>Stack-based Buffer Overflow</description>
+		<severity>BLOCKER</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
+	</rule>
+	<rule>
+		<key>125</key>
+		<name>Out-of-bounds Read (CWE-125)</name>
+		<description>Out-of-bounds Read</description>
+		<severity>MAJOR</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
+	</rule>
+	<rule>
+		<key>129</key>
+		<name>Improper Validation of Array Index (CWE-129)</name>
+		<description>Improper Validation of Array Index</description>
+		<severity>MAJOR</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
+	</rule>
+	<rule>
+		<key>134</key>
+		<name>Use of Externally-Controlled Format String (CWE-134)</name>
+		<description>Use of Externally-Controlled Format String</description>
+		<severity>BLOCKER</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
+	</rule>
+	<rule>
+		<key>135</key>
+		<name>Incorrect Calculation of Multi-Byte String Length (CWE-135)</name>
+		<description>Incorrect Calculation of Multi-Byte String Length</description>
+		<severity>BLOCKER</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
+	</rule>
+	<rule>
+		<key>159</key>
+		<name>Failure to Sanitize Special Element (CWE-159)</name>
+		<description>Failure to Sanitize Special Element</description>
+		<severity>INFO</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
+	</rule>
+	<rule>
+		<key>170</key>
+		<name>Improper Null Termination (CWE-170)</name>
+		<description>Improper Null Termination</description>
+		<severity>MAJOR</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
+	</rule>
+	<rule>
+		<key>190</key>
+		<name>Integer Overflow or Wraparound (CWE-190)</name>
+		<description>Integer Overflow or Wraparound</description>
+		<severity>BLOCKER</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
+	</rule>
+	<rule>
+		<key>191</key>
+		<name>Integer Underflow (Wrap or Wraparound) (CWE-191)</name>
+		<description>Integer Underflow (Wrap or Wraparound)</description>
+		<severity>MAJOR</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
+	</rule>
+	<rule>
+		<key>192</key>
+		<name>Integer Coercion Error (CWE-192)</name>
+		<description>Integer Coercion Error</description>
+		<severity>MAJOR</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
+	</rule>
+	<rule>
+		<key>193</key>
+		<name>Off-by-one Error (CWE-193)</name>
+		<description>Off-by-one Error</description>
+		<severity>MAJOR</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
+	</rule>
+	<rule>
+		<key>195</key>
+		<name>Signed to Unsigned Conversion Error (CWE-195)</name>
+		<description>Signed to Unsigned Conversion Error</description>
+		<severity>MAJOR</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
+	</rule>
+	<rule>
+		<key>196</key>
+		<name>Unsigned to Signed Conversion Error (CWE-196)</name>
+		<description>Unsigned to Signed Conversion Error</description>
+		<severity>MAJOR</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
+	</rule>
+	<rule>
+		<key>197</key>
+		<name>Numeric Truncation Error (CWE-197)</name>
+		<description>Numeric Truncation Error</description>
+		<severity>MAJOR</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
+	</rule>
+	<rule>
+		<key>200</key>
+		<name>Information Exposure (CWE-200)</name>
+		<description>Information Exposure</description>
+		<severity>MINOR</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
+	</rule>
+	<rule>
+		<key>201</key>
+		<name>Information Exposure Through Sent Data (CWE-201)</name>
+		<description>Information Exposure Through Sent Data</description>
+		<severity>MINOR</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
+	</rule>
+	<rule>
+		<key>209</key>
+		<name>Information Exposure Through an Error Message (CWE-209)</name>
+		<description>Information Exposure Through an Error Message</description>
+		<severity>MINOR</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
+	</rule>
+	<rule>
+		<key>215</key>
+		<name>Information Exposure Through Debug Information (CWE-215)</name>
+		<description>Information Exposure Through Debug Information</description>
+		<severity>MINOR</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
+	</rule>
+	<rule>
+		<key>234</key>
+		<name>Failure to Handle Missing Parameter (CWE-234)</name>
+		<description>Failure to Handle Missing Parameter</description>
+		<severity>MAJOR</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
+	</rule>
+	<rule>
+		<key>242</key>
+		<name>Use of Inherently Dangerous Function (CWE-242)</name>
+		<description>Use of Inherently Dangerous Function</description>
+		<severity>BLOCKER</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
+	</rule>
+	<rule>
+		<key>243</key>
+		<name>Creation of chroot Jail Without Changing Working Directory (CWE-243)</name>
+		<description>Creation of chroot Jail Without Changing Working Directory</description>
+		<severity>CRITICAL</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
+	</rule>
+	<rule>
+		<key>245</key>
+		<name>J2EE Bad Practices: Direct Management of Connections (CWE-245)</name>
+		<description>J2EE Bad Practices: Direct Management of Connections</description>
+		<severity>MINOR</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
+	</rule>
+	<rule>
+		<key>256</key>
+		<name>Plaintext Storage of a Password (CWE-256)</name>
+		<description>Plaintext Storage of a Password</description>
+		<severity>MAJOR</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
+	</rule>
+	<rule>
+		<key>259</key>
+		<name>Use of Hard-coded Password (CWE-259)</name>
+		<description>Use of Hard-coded Password</description>
+		<severity>MAJOR</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
+	</rule>
+	<rule>
+		<key>274</key>
+		<name>Improper Handling of Insufficient Privileges (CWE-274)</name>
+		<description>Improper Handling of Insufficient Privileges</description>
+		<severity>INFO</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
+	</rule>
+	<rule>
+		<key>285</key>
+		<name>Improper Authorization (CWE-285)</name>
+		<description>Improper Authorization</description>
+		<severity>MAJOR</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
+	</rule>
+	<rule>
+		<key>287</key>
+		<name>Improper Authentication (CWE-287)</name>
+		<description>Improper Authentication</description>
+		<severity>CRITICAL</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
+	</rule>
+	<rule>
+		<key>295</key>
+		<name>Improper Certificate Validation (CWE-295)</name>
+		<description>Improper Certificate Validation</description>
+		<severity>MAJOR</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
+	</rule>
+	<rule>
+		<key>296</key>
+		<name>Improper Following of a Certificate's Chain of Trust (CWE-296)</name>
+		<description>Improper Following of a Certificate's Chain of Trust</description>
+		<severity>MAJOR</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
+	</rule>
+	<rule>
+		<key>297</key>
+		<name>Improper Validation of Certificate with Host Mismatch (CWE-297)</name>
+		<description>Improper Validation of Certificate with Host Mismatch</description>
+		<severity>MAJOR</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
+	</rule>
+	<rule>
+		<key>298</key>
+		<name>Improper Validation of Certificate Expiration (CWE-298)</name>
+		<description>Improper Validation of Certificate Expiration</description>
+		<severity>MAJOR</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
+	</rule>
+	<rule>
+		<key>299</key>
+		<name>Improper Check for Certificate Revocation (CWE-299)</name>
+		<description>Improper Check for Certificate Revocation</description>
+		<severity>MAJOR</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
+	</rule>
+	<rule>
+		<key>311</key>
+		<name>Missing Encryption of Sensitive Data (CWE-311)</name>
+		<description>Missing Encryption of Sensitive Data</description>
+		<severity>MAJOR</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
+	</rule>
+	<rule>
+		<key>312</key>
+		<name>Cleartext Storage of Sensitive Information (CWE-312)</name>
+		<description>Cleartext Storage of Sensitive Information</description>
+		<severity>MAJOR</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
+	</rule>
+	<rule>
+		<key>313</key>
+		<name>Cleartext Storage in a File or on Disk (CWE-313)</name>
+		<description>Cleartext Storage in a File or on Disk</description>
+		<severity>MAJOR</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
+	</rule>
+	<rule>
+		<key>316</key>
+		<name>Cleartext Storage of Sensitive Information in Memory (CWE-316)</name>
+		<description>Cleartext Storage of Sensitive Information in Memory</description>
+		<severity>MAJOR</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
+	</rule>
+	<rule>
+		<key>321</key>
+		<name>Use of Hard-coded Cryptographic Key (CWE-321)</name>
+		<description>Use of Hard-coded Cryptographic Key</description>
+		<severity>MAJOR</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
+	</rule>
+	<rule>
+		<key>326</key>
+		<name>Inadequate Encryption Strength (CWE-326)</name>
+		<description>Inadequate Encryption Strength</description>
+		<severity>MAJOR</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
+	</rule>
+	<rule>
+		<key>327</key>
+		<name>Use of a Broken or Risky Cryptographic Algorithm (CWE-327)</name>
+		<description>Use of a Broken or Risky Cryptographic Algorithm</description>
+		<severity>MAJOR</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
+	</rule>
+	<rule>
+		<key>329</key>
+		<name>Not Using a Random IV with CBC Mode (CWE-329)</name>
+		<description>Not Using a Random IV with CBC Mode</description>
+		<severity>MINOR</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
+	</rule>
+	<rule>
+		<key>331</key>
+		<name>Insufficient Entropy (CWE-331)</name>
+		<description>Insufficient Entropy</description>
+		<severity>MAJOR</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
+	</rule>
+	<rule>
+		<key>338</key>
+		<name>Use of Cryptographically Weak Pseudo-Random Number Generator (PRNG) (CWE-338)</name>
+		<description>Use of Cryptographically Weak Pseudo-Random Number Generator (PRNG)</description>
+		<severity>MAJOR</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
+	</rule>
+	<rule>
+		<key>346</key>
+		<name>Origin Validation Error (CWE-346)</name>
+		<description>Origin Validation Error</description>
+		<severity>MAJOR</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
+	</rule>
+	<rule>
+		<key>347</key>
+		<name>Improper Verification of Cryptographic Signature (CWE-347)</name>
+		<description>Improper Verification of Cryptographic Signature</description>
+		<severity>MINOR</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
+	</rule>
+	<rule>
+		<key>350</key>
+		<name>Reliance on Reverse DNS Resolution for a Security-Critical Action (CWE-350)</name>
+		<description>Reliance on Reverse DNS Resolution for a Security-Critical Action</description>
+		<severity>MAJOR</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
+	</rule>
+	<rule>
+		<key>352</key>
+		<name>Cross-Site Request Forgery (CSRF) (CWE-352)</name>
+		<description>Cross-Site Request Forgery (CSRF)</description>
+		<severity>MAJOR</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
+	</rule>
+	<rule>
+		<key>354</key>
+		<name>Improper Validation of Integrity Check Value (CWE-354)</name>
+		<description>Improper Validation of Integrity Check Value</description>
+		<severity>MAJOR</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
+	</rule>
+	<rule>
+		<key>366</key>
+		<name>Race Condition within a Thread (CWE-366)</name>
+		<description>Race Condition within a Thread</description>
+		<severity>MAJOR</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
+	</rule>
+	<rule>
+		<key>367</key>
+		<name>Time-of-check Time-of-use (TOCTOU) Race Condition (CWE-367)</name>
+		<description>Time-of-check Time-of-use (TOCTOU) Race Condition</description>
+		<severity>MAJOR</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
+	</rule>
+	<rule>
+		<key>377</key>
+		<name>Insecure Temporary File (CWE-377)</name>
+		<description>Insecure Temporary File</description>
+		<severity>MAJOR</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
+	</rule>
+	<rule>
+		<key>378</key>
+		<name>Creation of Temporary File With Insecure Permissions (CWE-378)</name>
+		<description>Creation of Temporary File With Insecure Permissions</description>
+		<severity>MAJOR</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
+	</rule>
+	<rule>
+		<key>382</key>
+		<name>J2EE Bad Practices: Use of System.exit() (CWE-382)</name>
+		<description>J2EE Bad Practices: Use of System.exit()</description>
+		<severity>MINOR</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
+	</rule>
+	<rule>
+		<key>384</key>
+		<name>Session Fixation (CWE-384)</name>
+		<description>Session Fixation</description>
+		<severity>MAJOR</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
+	</rule>
+	<rule>
+		<key>391</key>
+		<name>Unchecked Error Condition (CWE-391)</name>
+		<description>Unchecked Error Condition</description>
+		<severity>MINOR</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
+	</rule>
+	<rule>
+		<key>398</key>
+		<name>7PK - Code Quality (CWE-398)</name>
+		<description>7PK - Code Quality</description>
+		<severity>INFO</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
+	</rule>
+	<rule>
+		<key>402</key>
+		<name>Transmission of Private Resources into a New Sphere ('Resource Leak') (CWE-402)</name>
+		<description>Transmission of Private Resources into a New Sphere ('Resource Leak')</description>
+		<severity>MAJOR</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
+	</rule>
+	<rule>
+		<key>404</key>
+		<name>Improper Resource Shutdown or Release (CWE-404)</name>
+		<description>Improper Resource Shutdown or Release</description>
+		<severity>MINOR</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
+	</rule>
+	<rule>
+		<key>415</key>
+		<name>Double Free (CWE-415)</name>
+		<description>Double Free</description>
+		<severity>MAJOR</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
+	</rule>
+	<rule>
+		<key>416</key>
+		<name>Use After Free (CWE-416)</name>
+		<description>Use After Free</description>
+		<severity>MINOR</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
+	</rule>
+	<rule>
+		<key>421</key>
+		<name>Race Condition During Access to Alternate Channel (CWE-421)</name>
+		<description>Race Condition During Access to Alternate Channel</description>
+		<severity>MAJOR</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
+	</rule>
+	<rule>
+		<key>426</key>
+		<name>Untrusted Search Path (CWE-426)</name>
+		<description>Untrusted Search Path</description>
+		<severity>MAJOR</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
+	</rule>
+	<rule>
+		<key>427</key>
+		<name>Uncontrolled Search Path Element (CWE-427)</name>
+		<description>Uncontrolled Search Path Element</description>
+		<severity>MAJOR</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
+	</rule>
+	<rule>
+		<key>434</key>
+		<name>Unrestricted Upload of File with Dangerous Type (CWE-434)</name>
+		<description>Unrestricted Upload of File with Dangerous Type</description>
+		<severity>CRITICAL</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
+	</rule>
+	<rule>
+		<key>441</key>
+		<name>Unintended Proxy or Intermediary ('Confused Deputy') (CWE-441)</name>
+		<description>Unintended Proxy or Intermediary ('Confused Deputy')</description>
+		<severity>MAJOR</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
+	</rule>
+	<rule>
+		<key>454</key>
+		<name>External Initialization of Trusted Variables or Data Stores (CWE-454)</name>
+		<description>External Initialization of Trusted Variables or Data Stores</description>
+		<severity>INFO</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
+	</rule>
+	<rule>
+		<key>470</key>
+		<name>Use of Externally-Controlled Input to Select Classes or Code ('Unsafe Reflection') (CWE-470)</name>
+		<description>Use of Externally-Controlled Input to Select Classes or Code ('Unsafe Reflection')</description>
+		<severity>MAJOR</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
+	</rule>
+	<rule>
+		<key>477</key>
+		<name>Use of Obsolete Function (CWE-477)</name>
+		<description>Use of Obsolete Function</description>
+		<severity>INFO</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
+	</rule>
+	<rule>
+		<key>479</key>
+		<name>Signal Handler Use of a Non-reentrant Function (CWE-479)</name>
+		<description>Signal Handler Use of a Non-reentrant Function</description>
+		<severity>MAJOR</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
+	</rule>
+	<rule>
+		<key>489</key>
+		<name>Leftover Debug Code (CWE-489)</name>
+		<description>Leftover Debug Code</description>
+		<severity>MAJOR</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
+	</rule>
+	<rule>
+		<key>494</key>
+		<name>Download of Code Without Integrity Check (CWE-494)</name>
+		<description>Download of Code Without Integrity Check</description>
+		<severity>BLOCKER</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
+	</rule>
+	<rule>
+		<key>497</key>
+		<name>Exposure of System Data to an Unauthorized Control Sphere (CWE-497)</name>
+		<description>Exposure of System Data to an Unauthorized Control Sphere</description>
+		<severity>MINOR</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
+	</rule>
+	<rule>
+		<key>498</key>
+		<name>Cloneable Class Containing Sensitive Information (CWE-498)</name>
+		<description>Cloneable Class Containing Sensitive Information</description>
+		<severity>MINOR</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
+	</rule>
+	<rule>
+		<key>501</key>
+		<name>Trust Boundary Violation (CWE-501)</name>
+		<description>Trust Boundary Violation</description>
+		<severity>MAJOR</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
+	</rule>
+	<rule>
+		<key>502</key>
+		<name>Deserialization of Untrusted Data (CWE-502)</name>
+		<description>Deserialization of Untrusted Data</description>
+		<severity>MAJOR</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
+	</rule>
+	<rule>
+		<key>506</key>
+		<name>Embedded Malicious Code (CWE-506)</name>
+		<description>Embedded Malicious Code</description>
+		<severity>CRITICAL</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
+	</rule>
+	<rule>
+		<key>511</key>
+		<name>Logic/Time Bomb (CWE-511)</name>
+		<description>Logic/Time Bomb</description>
+		<severity>BLOCKER</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
+	</rule>
+	<rule>
+		<key>514</key>
+		<name>Covert Channel (CWE-514)</name>
+		<description>Covert Channel</description>
+		<severity>MINOR</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
+	</rule>
+	<rule>
+		<key>522</key>
+		<name>Insufficiently Protected Credentials (CWE-522)</name>
+		<description>Insufficiently Protected Credentials</description>
+		<severity>MAJOR</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
+	</rule>
+	<rule>
+		<key>526</key>
+		<name>Information Exposure Through Environmental Variables (CWE-526)</name>
+		<description>Information Exposure Through Environmental Variables</description>
+		<severity>MINOR</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
+	</rule>
+	<rule>
+		<key>530</key>
+		<name>Exposure of Backup File to an Unauthorized Control Sphere (CWE-530)</name>
+		<description>Exposure of Backup File to an Unauthorized Control Sphere</description>
+		<severity>MINOR</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
+	</rule>
+	<rule>
+		<key>538</key>
+		<name>File and Directory Information Exposure (CWE-538)</name>
+		<description>File and Directory Information Exposure</description>
+		<severity>MINOR</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
+	</rule>
+	<rule>
+		<key>547</key>
+		<name>Use of Hard-coded Security-relevant Constants (CWE-547)</name>
+		<description>Use of Hard-coded Security-relevant Constants</description>
+		<severity>MAJOR</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
+	</rule>
+	<rule>
+		<key>548</key>
+		<name>Information Exposure Through Directory Listing (CWE-548)</name>
+		<description>Information Exposure Through Directory Listing</description>
+		<severity>MINOR</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
+	</rule>
+	<rule>
+		<key>557</key>
+		<name>Concurrency Issues (CWE-557)</name>
+		<description>Concurrency Issues</description>
+		<severity>MINOR</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
+	</rule>
+	<rule>
+		<key>560</key>
+		<name>Use of umask() with chmod-style Argument (CWE-560)</name>
+		<description>Use of umask() with chmod-style Argument</description>
+		<severity>MAJOR</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
+	</rule>
+	<rule>
+		<key>564</key>
+		<name>SQL Injection: Hibernate (CWE-564)</name>
+		<description>SQL Injection: Hibernate</description>
+		<severity>CRITICAL</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
+	</rule>
+	<rule>
+		<key>597</key>
+		<name>Use of Wrong Operator in String Comparison (CWE-597)</name>
+		<description>Use of Wrong Operator in String Comparison</description>
+		<severity>MINOR</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
+	</rule>
+	<rule>
+		<key>601</key>
+		<name>URL Redirection to Untrusted Site ('Open Redirect') (CWE-601)</name>
+		<description>URL Redirection to Untrusted Site ('Open Redirect')</description>
+		<severity>MAJOR</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
+	</rule>
+	<rule>
+		<key>611</key>
+		<name>Improper Restriction of XML External Entity Reference ('XXE') (CWE-611)</name>
+		<description>Improper Restriction of XML External Entity Reference ('XXE')</description>
+		<severity>MAJOR</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
+	</rule>
+	<rule>
+		<key>614</key>
+		<name>Sensitive Cookie in HTTPS Session Without 'Secure' Attribute (CWE-614)</name>
+		<description>Sensitive Cookie in HTTPS Session Without 'Secure' Attribute</description>
+		<severity>MINOR</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
+	</rule>
+	<rule>
+		<key>618</key>
+		<name>Exposed Unsafe ActiveX Method (CWE-618)</name>
+		<description>Exposed Unsafe ActiveX Method</description>
+		<severity>BLOCKER</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
+	</rule>
+	<rule>
+		<key>639</key>
+		<name>Authorization Bypass Through User-Controlled Key (CWE-639)</name>
+		<description>Authorization Bypass Through User-Controlled Key</description>
+		<severity>CRITICAL</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
+	</rule>
+	<rule>
+		<key>642</key>
+		<name>External Control of Critical State Data (CWE-642)</name>
+		<description>External Control of Critical State Data</description>
+		<severity>MINOR</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
+	</rule>
+	<rule>
+		<key>656</key>
+		<name>Reliance on Security Through Obscurity (CWE-656)</name>
+		<description>Reliance on Security Through Obscurity</description>
+		<severity>INFO</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
+	</rule>
+	<rule>
+		<key>665</key>
+		<name>Improper Initialization (CWE-665)</name>
+		<description>Improper Initialization</description>
+		<severity>MINOR</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
+	</rule>
+	<rule>
+		<key>668</key>
+		<name>Exposure of Resource to Wrong Sphere (CWE-668)</name>
+		<description>Exposure of Resource to Wrong Sphere</description>
+		<severity>MAJOR</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
+	</rule>
+	<rule>
+		<key>675</key>
+		<name>Duplicate Operations on Resource (CWE-675)</name>
+		<description>Duplicate Operations on Resource</description>
+		<severity>MINOR</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
+	</rule>
+	<rule>
+		<key>693</key>
+		<name>Protection Mechanism Failure (CWE-693)</name>
+		<description>Protection Mechanism Failure</description>
+		<severity>MAJOR</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
+	</rule>
+	<rule>
+		<key>708</key>
+		<name>Incorrect Ownership Assignment (CWE-708)</name>
+		<description>Incorrect Ownership Assignment</description>
+		<severity>CRITICAL</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
+	</rule>
+	<rule>
+		<key>732</key>
+		<name>Incorrect Permission Assignment for Critical Resource (CWE-732)</name>
+		<description>Incorrect Permission Assignment for Critical Resource</description>
+		<severity>MAJOR</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
+	</rule>
+	<rule>
+		<key>749</key>
+		<name>Exposed Dangerous Method or Function (CWE-749)</name>
+		<description>Exposed Dangerous Method or Function</description>
+		<severity>CRITICAL</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
+	</rule>
+	<rule>
+		<key>757</key>
+		<name>Selection of Less-Secure Algorithm During Negotiation ('Algorithm Downgrade') (CWE-757)</name>
+		<description>Selection of Less-Secure Algorithm During Negotiation ('Algorithm Downgrade')</description>
+		<severity>MAJOR</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
+	</rule>
+	<rule>
+		<key>760</key>
+		<name>Use of a One-Way Hash with a Predictable Salt (CWE-760)</name>
+		<description>Use of a One-Way Hash with a Predictable Salt</description>
+		<severity>MAJOR</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
+	</rule>
+	<rule>
+		<key>780</key>
+		<name>Use of RSA Algorithm without OAEP (CWE-780)</name>
+		<description>Use of RSA Algorithm without OAEP</description>
+		<severity>MAJOR</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
+	</rule>
+	<rule>
+		<key>798</key>
+		<name>Use of Hard-coded Credentials (CWE-798)</name>
+		<description>Use of Hard-coded Credentials</description>
+		<severity>MAJOR</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
+	</rule>
+	<rule>
+		<key>829</key>
+		<name>Inclusion of Functionality from Untrusted Control Sphere (CWE-829)</name>
+		<description>Inclusion of Functionality from Untrusted Control Sphere</description>
+		<severity>MAJOR</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
+	</rule>
+	<rule>
+		<key>830</key>
+		<name>Inclusion of Web Functionality from an Untrusted Source (CWE-830)</name>
+		<description>Inclusion of Web Functionality from an Untrusted Source</description>
+		<severity>MINOR</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
+	</rule>
+	<rule>
+		<key>915</key>
+		<name>Improperly Controlled Modification of Dynamically-Determined Object Attributes (CWE-915)</name>
+		<description>Improperly Controlled Modification of Dynamically-Determined Object Attributes</description>
+		<severity>MAJOR</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
+	</rule>
+	<rule>
+		<key>916</key>
+		<name>Use of Password Hash With Insufficient Computational Effort (CWE-916)</name>
+		<description>Use of Password Hash With Insufficient Computational Effort</description>
+		<severity>MAJOR</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
+	</rule>
+	<rule>
+		<key>943</key>
+		<name>Improper Neutralization of Special Elements in Data Query Logic (CWE-943)</name>
+		<description>Improper Neutralization of Special Elements in Data Query Logic</description>
+		<severity>CRITICAL</severity>
+		<type>VULNERABILITY</type>
+		<tag>veracode</tag>
 	</rule>
 </veracode-rules>

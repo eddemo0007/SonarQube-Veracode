@@ -32,7 +32,11 @@ XX
 
 # Building
 
-XX
+scanner logs - use with -X
+
+server logs
+    - props file
+    - which log file to read
 
 # Future plans
 

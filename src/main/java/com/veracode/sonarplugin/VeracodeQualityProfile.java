@@ -19,11 +19,11 @@ public final class VeracodeQualityProfile implements BuiltInQualityProfilesDefin
         VeracodeLanguage.KEY);
         profile.setDefault(true);
   
-      NewBuiltInActiveRule rule1 = profile.activateRule(VeracodeRules.REPO_KEY, "ExampleRule1");
+      //NewBuiltInActiveRule rule1 = profile.activateRule(VeracodeRules.REPO_KEY, "ExampleRule1");
       //rule1.overrideSeverity("BLOCKER");
-      NewBuiltInActiveRule rule2 = profile.activateRule(VeracodeRules.REPO_KEY, "ExampleRule2");
+      //NewBuiltInActiveRule rule2 = profile.activateRule(VeracodeRules.REPO_KEY, "ExampleRule2");
       //rule2.overrideSeverity("MAJOR");
-      NewBuiltInActiveRule rule3 = profile.activateRule(VeracodeRules.REPO_KEY, "ExampleRule3");
+      //NewBuiltInActiveRule rule3 = profile.activateRule(VeracodeRules.REPO_KEY, "ExampleRule3");
       //rule3.overrideSeverity("CRITICAL");
   
       profile.done();
