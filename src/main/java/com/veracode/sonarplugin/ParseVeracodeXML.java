@@ -2,8 +2,8 @@ package com.veracode.sonarplugin;
 
 import java.io.ByteArrayInputStream;
 import java.nio.charset.StandardCharsets;
-import java.util.Map;
-import java.util.HashMap;
+//import java.util.Map;
+//import java.util.HashMap;
 
 // StAX XML parser
 import javax.xml.namespace.QName;

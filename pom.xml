@@ -12,6 +12,19 @@
   <name>Veracode plugin for SonarQube</name>
   <description>Plugin to enable integrating Veracode scan results into a SonarQube project</description>
 
+  <organization>
+		<name>buzzcode</name>
+		<url>https://gitlab.com/buzzcode</url>
+	</organization>
+
+  <licenses>
+    <license>
+      <name>MIT License</name>
+      <url>https://opensource.org/licenses/MIT</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <sonar.apiVersion>6.7.1</sonar.apiVersion>
@@ -50,6 +63,8 @@
         <configuration>
           <pluginKey>veracode</pluginKey>
           <pluginClass>com.veracode.sonarplugin.VeracodePlugin</pluginClass>
+          <pluginUrl>https://gitlab.com/buzzcode/SonarQube-Veracode</pluginUrl>
+          <pluginIssueTrackerUrl>https://gitlab.com/buzzcode/SonarQube-Veracode/issues</pluginIssueTrackerUrl>
         </configuration>
       </plugin>
       <plugin>
@@ -74,40 +89,6 @@
           </execution>
         </executions>
       </plugin>
-      <!-- <plugin>
-        <groupId>com.github.eirslett</groupId>
-        <artifactId>frontend-maven-plugin</artifactId>
-        <version>1.6</version>
-        <executions>
-          <execution>
-            <phase>generate-resources</phase>
-            <id>install node and yarn</id>
-            <goals>
-              <goal>install-node-and-yarn</goal>
-            </goals>
-            <configuration>
-              <nodeVersion>v8.5.0</nodeVersion>
-              <yarnVersion>v1.1.0</yarnVersion>
-            </configuration>
-          </execution>
-          <execution>
-            <id>yarn install</id>
-            <goals>
-              <goal>yarn</goal>
-            </goals>
-          </execution>
-          <execution>
-            <phase>generate-resources</phase>
-            <id>yarn run script</id>
-            <goals>
-              <goal>yarn</goal>
-            </goals>
-            <configuration>
-              <arguments>run build</arguments>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin> -->
     </plugins>
   </build>
 
