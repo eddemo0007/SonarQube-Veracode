@@ -21,6 +21,10 @@ import java.text.ParseException;
 import org.sonar.api.utils.log.Logger;
 import org.sonar.api.utils.log.Loggers;
 
+import org.sonar.api.batch.sensor.SensorContext;
+import org.sonar.api.batch.sensor.issue.internal.DefaultIssueLocation;
+import org.sonar.api.rule.RuleKey;
+
 public class ParseVeracodeXML {
 	
 	// class variables
@@ -184,7 +188,65 @@ public class ParseVeracodeXML {
 		}
 	}
 
-
+	// parse the detailed report from detailedreport.xsd doc (from detailedReport() )
+	public String addFlawsFromReport(SensorContext context)
+	throws /*ParseException, */XMLStreamException
+	{
+		//log.info("getting AppID for " + appName);
+		
+		try
+		{
+			m_eventReader = m_factory.createXMLEventReader(m_inputStream);
+						
+			while(m_eventReader.hasNext())
+			{
+				XMLEvent event = m_eventReader.nextEvent();
+				
+				switch(event.getEventType())
+				{
+				case XMLStreamConstants.START_ELEMENT:
+					
+					StartElement startElem = event.asStartElement();
+					String eName = startElem.getName().getLocalPart();
+					
+					// find a 'flaw' element
+					if(eName.equalsIgnoreCase("flaw"))
+					{
+						Attribute attribCWE = startElem.getAttributeByName(new QName("cweid"));
+						String cweID = attribCWE.getValue();
+					
+						// add the issue to SonarQube
+						context.newIssue()
+									.forRule(RuleKey.of(VeracodeRules.REPO_KEY, cweID))
+									.at(new DefaultIssueLocation().on(context.module()) /* .at?? .message?? */  )
+									.save();
+						log.debug("flaw: CWE ID = " + cweID);
+						
+						// do I care about the 'mitigtion' field in the flaw data??
+					}
+					
+					break;
+					
+				case XMLStreamConstants.CHARACTERS:
+					break;
+					
+				
+				case XMLStreamConstants.END_ELEMENT:
+					break;
+				}
+			}
+			
+			//log.error("No app found matching name " + appName);
+			//throw new ParseException("No flaws found", 0);	
+			
+			return "x";
+		}
+		catch(XMLStreamException e)
+		{
+			log.error("Error reading from xml string " + e.toString());
+			throw new XMLStreamException("Error reading from xml string " + e.toString());
+		}
+	}
 
 
 

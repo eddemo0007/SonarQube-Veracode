@@ -24,7 +24,8 @@ public class VeracodeSensor implements Sensor {
     private static VeracodeSensorConfiguration m_config;
     private static CredentialsHelper m_credsHelper;
     private static UploadAPIWrapper m_uploadWrapper;
-    private static ResultsAPIWrapper m_resultsWrapepr;
+    private static ParseVeracodeXML.BuildInformation m_buildInfo;
+    private static ResultsAPIWrapper m_resultsWrapper;
 
     private String m_appName;
     private String m_appID;
@@ -98,13 +99,13 @@ public class VeracodeSensor implements Sensor {
                 // parse the XML and get the buildID
                 ParseVeracodeXML parser = new ParseVeracodeXML(buildInfoXML);
 
-                ParseVeracodeXML.BuildInformation buildInfo = parser.getBuildIDFromInfo(m_appID);
+                m_buildInfo = parser.getBuildIDFromInfo(m_appID);
 
                 // failed if the build is not ready yet
-                if(buildInfo == null)
+                if(m_buildInfo == null)
                     return;
 
-                log.info("Latest Build: " + buildInfo.m_buildName + " [ID = " + buildInfo.m_buildID + "]");
+                log.info("Latest Build: " + m_buildInfo.m_buildName + " [ID = " + m_buildInfo.m_buildID + "]");
             }
             catch (ParseException p) {
                 log.error("Parsing error " + p.toString());
@@ -121,12 +122,43 @@ public class VeracodeSensor implements Sensor {
         }
 
         // get the detailed report(s)
-        //m_resultsWrapper = new ResultsAPIWrapper();
+        m_resultsWrapper = new ResultsAPIWrapper();
 
-        // loop through detailed report(s)
-            // add issue for each flaw - how are dups handled?
+        // this already worked once, but...
+        if(!m_credsHelper.setUpCredentials(m_resultsWrapper))
+        {
+            log.error("Error setting up the Veracode credentials, skipping Veracode analysis");
+            return;
+        }
 
+        // future: loop through detailed report(s)
 
+        log.info("[Veracode] Getting detailed report for build: " + m_buildInfo.m_buildName);
+
+        try {
+            String detailedReportXML = m_resultsWrapper.detailedReport(m_buildInfo.m_buildID);
+            log.debug("Detailed Report XML: " + detailedReportXML);
+
+            try {
+                // parse the XML and add flaws 
+                ParseVeracodeXML parser = new ParseVeracodeXML(detailedReportXML);
+
+                parser.addFlawsFromReport(context);
+                //log.info("Found existing app with ID = " + m_appID);
+            }
+            /*catch (ParseException p) {
+                log.error("Parsing error " + p.toString());
+                return;
+            }*/
+            catch (XMLStreamException x) {
+                log.error("XML Stream error " + x.toString());
+                return;
+            }
+        }
+        catch (IOException e) {
+            log.error("Error getting the detailed report: Exception " + e.toString());
+            return;
+        }
     }
 
     @Override
