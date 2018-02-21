@@ -1,9 +1,9 @@
 package com.veracode.sonarplugin;
 
 import java.io.InputStream;
-//import java.io.Reader;
-//import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
+import java.util.List;
+
 import org.sonar.api.server.rule.RulesDefinition;
 import org.sonar.api.server.rule.RulesDefinitionXmlLoader;
 import org.sonar.api.utils.log.Logger;
@@ -18,14 +18,22 @@ public final class VeracodeRules implements RulesDefinition {
 
     private final Logger log = Loggers.get(getClass());
 
-    private void defineRulesForLanguage(Context context, String repositoryKey, 
-                                String repositoryName, String languageKey) {
-        
+    private static Repository m_repository;
+
+    // let others access the rules list (like the Quality Profile)
+    public static List<RulesDefinition.Rule> getRulesList() {
+        return m_repository.rules();
+    }
+
+    @Override
+    public void define(Context context) {
+
         log.debug("Loading Veracode rules");
 
-        NewRepository repository = context.createRepository(repositoryKey, 
-                                    languageKey).setName(repositoryName);
+        NewRepository repository = context.createRepository(REPO_KEY, 
+                                            VeracodeLanguage.KEY).setName(REPO_NAME);
 
+        // load the rules from the resource file into the repo
         InputStream rulesXml = this.getClass().getResourceAsStream(PATH_TO_RULES_XML);
 
         if (rulesXml != null) {
@@ -34,11 +42,9 @@ public final class VeracodeRules implements RulesDefinition {
         }
 
         repository.done();
-    }
 
-    @Override
-    public void define(Context context) {
-        defineRulesForLanguage(context, REPO_KEY, REPO_NAME, VeracodeLanguage.KEY);
+        // save the repo for later use (NewRepo vs. Repo - sheesh)
+        m_repository = context.repository(REPO_KEY);
   }
 
 }

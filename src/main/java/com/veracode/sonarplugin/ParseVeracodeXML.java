@@ -16,11 +16,10 @@ import javax.xml.stream.events.Attribute;
 //import javax.xml.stream.events.EndElement;
 import javax.xml.stream.events.StartElement;
 import javax.xml.stream.events.XMLEvent;
-
 import java.text.ParseException;
+
 import org.sonar.api.utils.log.Logger;
 import org.sonar.api.utils.log.Loggers;
-
 import org.sonar.api.batch.sensor.SensorContext;
 import org.sonar.api.batch.sensor.issue.internal.DefaultIssueLocation;
 import org.sonar.api.rule.RuleKey;
@@ -247,7 +246,4 @@ public class ParseVeracodeXML {
 			throw new XMLStreamException("Error reading from xml string " + e.toString());
 		}
 	}
-
-
-
 }
