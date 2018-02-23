@@ -5,7 +5,6 @@ import java.text.ParseException;
 
 import javax.xml.stream.XMLStreamException;
 
-import com.veracode.apiwrapper.wrappers.*;
 import org.sonar.api.batch.sensor.Sensor;
 import org.sonar.api.batch.sensor.SensorDescriptor;
 import org.sonar.api.batch.sensor.SensorContext;
@@ -15,6 +14,7 @@ import org.sonar.api.batch.sensor.SensorContext;
 import org.sonar.api.utils.log.Logger;
 import org.sonar.api.utils.log.Loggers;
 
+import com.veracode.apiwrapper.wrappers.*;
 
 public class VeracodeSensor implements Sensor {
 

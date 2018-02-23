@@ -45,6 +45,5 @@ public final class VeracodeRules implements RulesDefinition {
 
         // save the repo for later use (NewRepo vs. Repo - sheesh)
         m_repository = context.repository(REPO_KEY);
-  }
-
+    }
 }

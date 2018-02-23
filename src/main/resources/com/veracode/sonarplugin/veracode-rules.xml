@@ -6,6 +6,11 @@
 		<severity>CRITICAL</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-15)</description>
+			<defaultValue>External Control of System or Configuration Setting (CWE-15)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>16</key>
@@ -14,6 +19,11 @@
 		<severity>INFO</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-16)</description>
+			<defaultValue>Configuration (CWE-16)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>22</key>
@@ -22,6 +32,11 @@
 		<severity>MAJOR</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-22)</description>
+			<defaultValue>Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal') (CWE-22)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>73</key>
@@ -30,6 +45,11 @@
 		<severity>MAJOR</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-73)</description>
+			<defaultValue>External Control of File Name or Path (CWE-73)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>78</key>
@@ -38,6 +58,11 @@
 		<severity>BLOCKER</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-78)</description>
+			<defaultValue>Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection') (CWE-78)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>79</key>
@@ -46,6 +71,11 @@
 		<severity>MAJOR</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-79)</description>
+			<defaultValue>Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') (CWE-79)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>80</key>
@@ -54,6 +84,11 @@
 		<severity>MAJOR</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-80)</description>
+			<defaultValue>Improper Neutralization of Script-Related HTML Tags in a Web Page (Basic XSS) (CWE-80)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>83</key>
@@ -62,6 +97,11 @@
 		<severity>MAJOR</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-83)</description>
+			<defaultValue>Improper Neutralization of Script in Attributes in a Web Page (CWE-83)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>86</key>
@@ -70,6 +110,11 @@
 		<severity>MAJOR</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-86)</description>
+			<defaultValue>Improper Neutralization of Invalid Characters in Identifiers in Web Pages (CWE-86)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>88</key>
@@ -78,6 +123,11 @@
 		<severity>MAJOR</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-88)</description>
+			<defaultValue>Argument Injection or Modification (CWE-88)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>89</key>
@@ -86,6 +136,11 @@
 		<severity>CRITICAL</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-89)</description>
+			<defaultValue>Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection') (CWE-89)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>90</key>
@@ -94,6 +149,11 @@
 		<severity>MAJOR</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-90)</description>
+			<defaultValue>Improper Neutralization of Special Elements used in an LDAP Query ('LDAP Injection') (CWE-90)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>91</key>
@@ -102,6 +162,11 @@
 		<severity>MAJOR</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-91)</description>
+			<defaultValue>XML Injection (aka Blind XPath Injection) (CWE-91)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>93</key>
@@ -110,6 +175,11 @@
 		<severity>MAJOR</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-93)</description>
+			<defaultValue>Improper Neutralization of CRLF Sequences ('CRLF Injection') (CWE-93)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>94</key>
@@ -118,6 +188,11 @@
 		<severity>MAJOR</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-94)</description>
+			<defaultValue>Improper Control of Generation of Code ('Code Injection') (CWE-94)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>95</key>
@@ -126,6 +201,11 @@
 		<severity>BLOCKER</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-95)</description>
+			<defaultValue>Improper Neutralization of Directives in Dynamically Evaluated Code ('Eval Injection') (CWE-95)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>98</key>
@@ -134,6 +214,11 @@
 		<severity>CRITICAL</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-98)</description>
+			<defaultValue>Improper Control of Filename for Include/Require Statement in PHP Program ('PHP Remote File Inclusion') (CWE-98)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>99</key>
@@ -142,6 +227,11 @@
 		<severity>MAJOR</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-99)</description>
+			<defaultValue>Improper Control of Resource Identifiers ('Resource Injection') (CWE-99)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>103</key>
@@ -150,6 +240,11 @@
 		<severity>MAJOR</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-103)</description>
+			<defaultValue>Struts: Incomplete validate() Method Definition (CWE-103)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>104</key>
@@ -158,6 +253,11 @@
 		<severity>MAJOR</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-104)</description>
+			<defaultValue>Struts: Form Bean Does Not Extend Validation Class (CWE-104)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>111</key>
@@ -166,6 +266,11 @@
 		<severity>CRITICAL</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-111)</description>
+			<defaultValue>Direct Use of Unsafe JNI (CWE-111)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>112</key>
@@ -174,6 +279,11 @@
 		<severity>MAJOR</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-112)</description>
+			<defaultValue>Missing XML Validation (CWE-112)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>113</key>
@@ -182,6 +292,11 @@
 		<severity>MAJOR</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-113)</description>
+			<defaultValue>Improper Neutralization of CRLF Sequences in HTTP Headers ('HTTP Response Splitting') (CWE-113)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>114</key>
@@ -190,6 +305,11 @@
 		<severity>BLOCKER</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-114)</description>
+			<defaultValue>Process Control (CWE-114)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>117</key>
@@ -198,6 +318,11 @@
 		<severity>MAJOR</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-117)</description>
+			<defaultValue>Improper Output Neutralization for Logs (CWE-117)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>121</key>
@@ -206,6 +331,11 @@
 		<severity>BLOCKER</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-121)</description>
+			<defaultValue>Stack-based Buffer Overflow (CWE-121)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>125</key>
@@ -214,6 +344,11 @@
 		<severity>MAJOR</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-125)</description>
+			<defaultValue>Out-of-bounds Read (CWE-125)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>129</key>
@@ -222,6 +357,11 @@
 		<severity>MAJOR</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-129)</description>
+			<defaultValue>Improper Validation of Array Index (CWE-129)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>134</key>
@@ -230,6 +370,11 @@
 		<severity>BLOCKER</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-134)</description>
+			<defaultValue>Use of Externally-Controlled Format String (CWE-134)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>135</key>
@@ -238,6 +383,11 @@
 		<severity>BLOCKER</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-135)</description>
+			<defaultValue>Incorrect Calculation of Multi-Byte String Length (CWE-135)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>159</key>
@@ -246,6 +396,11 @@
 		<severity>INFO</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-159)</description>
+			<defaultValue>Failure to Sanitize Special Element (CWE-159)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>170</key>
@@ -254,6 +409,11 @@
 		<severity>MAJOR</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-170)</description>
+			<defaultValue>Improper Null Termination (CWE-170)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>190</key>
@@ -262,6 +422,11 @@
 		<severity>BLOCKER</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-190)</description>
+			<defaultValue>Integer Overflow or Wraparound (CWE-190)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>191</key>
@@ -270,6 +435,11 @@
 		<severity>MAJOR</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-191)</description>
+			<defaultValue>Integer Underflow (Wrap or Wraparound) (CWE-191)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>192</key>
@@ -278,6 +448,11 @@
 		<severity>MAJOR</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-192)</description>
+			<defaultValue>Integer Coercion Error (CWE-192)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>193</key>
@@ -286,6 +461,11 @@
 		<severity>MAJOR</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-193)</description>
+			<defaultValue>Off-by-one Error (CWE-193)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>195</key>
@@ -294,6 +474,11 @@
 		<severity>MAJOR</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-195)</description>
+			<defaultValue>Signed to Unsigned Conversion Error (CWE-195)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>196</key>
@@ -302,6 +487,11 @@
 		<severity>MAJOR</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-196)</description>
+			<defaultValue>Unsigned to Signed Conversion Error (CWE-196)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>197</key>
@@ -310,6 +500,11 @@
 		<severity>MAJOR</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-197)</description>
+			<defaultValue>Numeric Truncation Error (CWE-197)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>200</key>
@@ -318,6 +513,11 @@
 		<severity>MINOR</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-200)</description>
+			<defaultValue>Information Exposure (CWE-200)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>201</key>
@@ -326,6 +526,11 @@
 		<severity>MINOR</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-201)</description>
+			<defaultValue>Information Exposure Through Sent Data (CWE-201)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>209</key>
@@ -334,6 +539,11 @@
 		<severity>MINOR</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-209)</description>
+			<defaultValue>Information Exposure Through an Error Message (CWE-209)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>215</key>
@@ -342,6 +552,11 @@
 		<severity>MINOR</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-215)</description>
+			<defaultValue>Information Exposure Through Debug Information (CWE-215)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>234</key>
@@ -350,6 +565,11 @@
 		<severity>MAJOR</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-234)</description>
+			<defaultValue>Failure to Handle Missing Parameter (CWE-234)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>242</key>
@@ -358,6 +578,11 @@
 		<severity>BLOCKER</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-242)</description>
+			<defaultValue>Use of Inherently Dangerous Function (CWE-242)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>243</key>
@@ -366,6 +591,11 @@
 		<severity>CRITICAL</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-243)</description>
+			<defaultValue>Creation of chroot Jail Without Changing Working Directory (CWE-243)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>245</key>
@@ -374,6 +604,11 @@
 		<severity>MINOR</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-245)</description>
+			<defaultValue>J2EE Bad Practices: Direct Management of Connections (CWE-245)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>256</key>
@@ -382,6 +617,11 @@
 		<severity>MAJOR</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-256)</description>
+			<defaultValue>Plaintext Storage of a Password (CWE-256)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>259</key>
@@ -390,6 +630,11 @@
 		<severity>MAJOR</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-259)</description>
+			<defaultValue>Use of Hard-coded Password (CWE-259)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>274</key>
@@ -398,6 +643,11 @@
 		<severity>INFO</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-274)</description>
+			<defaultValue>Improper Handling of Insufficient Privileges (CWE-274)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>285</key>
@@ -406,6 +656,11 @@
 		<severity>MAJOR</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-285)</description>
+			<defaultValue>Improper Authorization (CWE-285)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>287</key>
@@ -414,6 +669,11 @@
 		<severity>CRITICAL</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-287)</description>
+			<defaultValue>Improper Authentication (CWE-287)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>295</key>
@@ -422,6 +682,11 @@
 		<severity>MAJOR</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-295)</description>
+			<defaultValue>Improper Certificate Validation (CWE-295)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>296</key>
@@ -430,6 +695,11 @@
 		<severity>MAJOR</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-296)</description>
+			<defaultValue>Improper Following of a Certificate's Chain of Trust (CWE-296)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>297</key>
@@ -438,6 +708,11 @@
 		<severity>MAJOR</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-297)</description>
+			<defaultValue>Improper Validation of Certificate with Host Mismatch (CWE-297)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>298</key>
@@ -446,6 +721,11 @@
 		<severity>MAJOR</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-298)</description>
+			<defaultValue>Improper Validation of Certificate Expiration (CWE-298)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>299</key>
@@ -454,6 +734,11 @@
 		<severity>MAJOR</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-299)</description>
+			<defaultValue>Improper Check for Certificate Revocation (CWE-299)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>311</key>
@@ -462,6 +747,11 @@
 		<severity>MAJOR</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-311)</description>
+			<defaultValue>Missing Encryption of Sensitive Data (CWE-311)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>312</key>
@@ -470,6 +760,11 @@
 		<severity>MAJOR</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-312)</description>
+			<defaultValue>Cleartext Storage of Sensitive Information (CWE-312)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>313</key>
@@ -478,6 +773,11 @@
 		<severity>MAJOR</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-313)</description>
+			<defaultValue>Cleartext Storage in a File or on Disk (CWE-313)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>316</key>
@@ -486,6 +786,11 @@
 		<severity>MAJOR</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-316)</description>
+			<defaultValue>Cleartext Storage of Sensitive Information in Memory (CWE-316)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>321</key>
@@ -494,6 +799,11 @@
 		<severity>MAJOR</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-321)</description>
+			<defaultValue>Use of Hard-coded Cryptographic Key (CWE-321)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>326</key>
@@ -502,6 +812,11 @@
 		<severity>MAJOR</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-326)</description>
+			<defaultValue>Inadequate Encryption Strength (CWE-326)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>327</key>
@@ -510,6 +825,11 @@
 		<severity>MAJOR</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-327)</description>
+			<defaultValue>Use of a Broken or Risky Cryptographic Algorithm (CWE-327)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>329</key>
@@ -518,6 +838,11 @@
 		<severity>MINOR</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-329)</description>
+			<defaultValue>Not Using a Random IV with CBC Mode (CWE-329)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>331</key>
@@ -526,6 +851,11 @@
 		<severity>MAJOR</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-331)</description>
+			<defaultValue>Insufficient Entropy (CWE-331)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>338</key>
@@ -534,6 +864,11 @@
 		<severity>MAJOR</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-338)</description>
+			<defaultValue>Use of Cryptographically Weak Pseudo-Random Number Generator (PRNG) (CWE-338)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>346</key>
@@ -542,6 +877,11 @@
 		<severity>MAJOR</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-346)</description>
+			<defaultValue>Origin Validation Error (CWE-346)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>347</key>
@@ -550,6 +890,11 @@
 		<severity>MINOR</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-347)</description>
+			<defaultValue>Improper Verification of Cryptographic Signature (CWE-347)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>350</key>
@@ -558,6 +903,11 @@
 		<severity>MAJOR</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-350)</description>
+			<defaultValue>Reliance on Reverse DNS Resolution for a Security-Critical Action (CWE-350)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>352</key>
@@ -566,6 +916,11 @@
 		<severity>MAJOR</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-352)</description>
+			<defaultValue>Cross-Site Request Forgery (CSRF) (CWE-352)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>354</key>
@@ -574,6 +929,11 @@
 		<severity>MAJOR</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-354)</description>
+			<defaultValue>Improper Validation of Integrity Check Value (CWE-354)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>366</key>
@@ -582,6 +942,11 @@
 		<severity>MAJOR</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-366)</description>
+			<defaultValue>Race Condition within a Thread (CWE-366)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>367</key>
@@ -590,6 +955,11 @@
 		<severity>MAJOR</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-367)</description>
+			<defaultValue>Time-of-check Time-of-use (TOCTOU) Race Condition (CWE-367)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>377</key>
@@ -598,6 +968,11 @@
 		<severity>MAJOR</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-377)</description>
+			<defaultValue>Insecure Temporary File (CWE-377)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>378</key>
@@ -606,6 +981,11 @@
 		<severity>MAJOR</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-378)</description>
+			<defaultValue>Creation of Temporary File With Insecure Permissions (CWE-378)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>382</key>
@@ -614,6 +994,11 @@
 		<severity>MINOR</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-382)</description>
+			<defaultValue>J2EE Bad Practices: Use of System.exit() (CWE-382)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>384</key>
@@ -622,6 +1007,11 @@
 		<severity>MAJOR</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-384)</description>
+			<defaultValue>Session Fixation (CWE-384)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>391</key>
@@ -630,6 +1020,11 @@
 		<severity>MINOR</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-391)</description>
+			<defaultValue>Unchecked Error Condition (CWE-391)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>398</key>
@@ -638,6 +1033,11 @@
 		<severity>INFO</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-398)</description>
+			<defaultValue>7PK - Code Quality (CWE-398)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>402</key>
@@ -646,6 +1046,11 @@
 		<severity>MAJOR</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-402)</description>
+			<defaultValue>Transmission of Private Resources into a New Sphere ('Resource Leak') (CWE-402)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>404</key>
@@ -654,6 +1059,11 @@
 		<severity>MINOR</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-404)</description>
+			<defaultValue>Improper Resource Shutdown or Release (CWE-404)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>415</key>
@@ -662,6 +1072,11 @@
 		<severity>MAJOR</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-415)</description>
+			<defaultValue>Double Free (CWE-415)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>416</key>
@@ -670,6 +1085,11 @@
 		<severity>MINOR</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-416)</description>
+			<defaultValue>Use After Free (CWE-416)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>421</key>
@@ -678,6 +1098,11 @@
 		<severity>MAJOR</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-421)</description>
+			<defaultValue>Race Condition During Access to Alternate Channel (CWE-421)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>426</key>
@@ -686,6 +1111,11 @@
 		<severity>MAJOR</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-426)</description>
+			<defaultValue>Untrusted Search Path (CWE-426)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>427</key>
@@ -694,6 +1124,11 @@
 		<severity>MAJOR</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-427)</description>
+			<defaultValue>Uncontrolled Search Path Element (CWE-427)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>434</key>
@@ -702,6 +1137,11 @@
 		<severity>CRITICAL</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-434)</description>
+			<defaultValue>Unrestricted Upload of File with Dangerous Type (CWE-434)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>441</key>
@@ -710,6 +1150,11 @@
 		<severity>MAJOR</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-441)</description>
+			<defaultValue>Unintended Proxy or Intermediary ('Confused Deputy') (CWE-441)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>454</key>
@@ -718,6 +1163,11 @@
 		<severity>INFO</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-454)</description>
+			<defaultValue>External Initialization of Trusted Variables or Data Stores (CWE-454)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>470</key>
@@ -726,6 +1176,11 @@
 		<severity>MAJOR</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-470)</description>
+			<defaultValue>Use of Externally-Controlled Input to Select Classes or Code ('Unsafe Reflection') (CWE-470)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>477</key>
@@ -734,6 +1189,11 @@
 		<severity>INFO</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-477)</description>
+			<defaultValue>Use of Obsolete Function (CWE-477)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>479</key>
@@ -742,6 +1202,11 @@
 		<severity>MAJOR</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-479)</description>
+			<defaultValue>Signal Handler Use of a Non-reentrant Function (CWE-479)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>489</key>
@@ -750,6 +1215,11 @@
 		<severity>MAJOR</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-489)</description>
+			<defaultValue>Leftover Debug Code (CWE-489)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>494</key>
@@ -758,6 +1228,11 @@
 		<severity>BLOCKER</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-494)</description>
+			<defaultValue>Download of Code Without Integrity Check (CWE-494)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>497</key>
@@ -766,6 +1241,11 @@
 		<severity>MINOR</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-497)</description>
+			<defaultValue>Exposure of System Data to an Unauthorized Control Sphere (CWE-497)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>498</key>
@@ -774,6 +1254,11 @@
 		<severity>MINOR</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-498)</description>
+			<defaultValue>Cloneable Class Containing Sensitive Information (CWE-498)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>501</key>
@@ -782,6 +1267,11 @@
 		<severity>MAJOR</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-501)</description>
+			<defaultValue>Trust Boundary Violation (CWE-501)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>502</key>
@@ -790,6 +1280,11 @@
 		<severity>MAJOR</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-502)</description>
+			<defaultValue>Deserialization of Untrusted Data (CWE-502)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>506</key>
@@ -798,6 +1293,11 @@
 		<severity>CRITICAL</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-506)</description>
+			<defaultValue>Embedded Malicious Code (CWE-506)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>511</key>
@@ -806,6 +1306,11 @@
 		<severity>BLOCKER</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-511)</description>
+			<defaultValue>Logic/Time Bomb (CWE-511)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>514</key>
@@ -814,6 +1319,11 @@
 		<severity>MINOR</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-514)</description>
+			<defaultValue>Covert Channel (CWE-514)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>522</key>
@@ -822,6 +1332,11 @@
 		<severity>MAJOR</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-522)</description>
+			<defaultValue>Insufficiently Protected Credentials (CWE-522)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>526</key>
@@ -830,6 +1345,11 @@
 		<severity>MINOR</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-526)</description>
+			<defaultValue>Information Exposure Through Environmental Variables (CWE-526)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>530</key>
@@ -838,6 +1358,11 @@
 		<severity>MINOR</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-530)</description>
+			<defaultValue>Exposure of Backup File to an Unauthorized Control Sphere (CWE-530)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>538</key>
@@ -846,6 +1371,11 @@
 		<severity>MINOR</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-538)</description>
+			<defaultValue>File and Directory Information Exposure (CWE-538)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>547</key>
@@ -854,6 +1384,11 @@
 		<severity>MAJOR</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-547)</description>
+			<defaultValue>Use of Hard-coded Security-relevant Constants (CWE-547)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>548</key>
@@ -862,6 +1397,11 @@
 		<severity>MINOR</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-548)</description>
+			<defaultValue>Information Exposure Through Directory Listing (CWE-548)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>557</key>
@@ -870,6 +1410,11 @@
 		<severity>MINOR</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-557)</description>
+			<defaultValue>Concurrency Issues (CWE-557)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>560</key>
@@ -878,6 +1423,11 @@
 		<severity>MAJOR</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-560)</description>
+			<defaultValue>Use of umask() with chmod-style Argument (CWE-560)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>564</key>
@@ -886,6 +1436,11 @@
 		<severity>CRITICAL</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-564)</description>
+			<defaultValue>SQL Injection: Hibernate (CWE-564)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>597</key>
@@ -894,6 +1449,11 @@
 		<severity>MINOR</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-597)</description>
+			<defaultValue>Use of Wrong Operator in String Comparison (CWE-597)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>601</key>
@@ -902,6 +1462,11 @@
 		<severity>MAJOR</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-601)</description>
+			<defaultValue>URL Redirection to Untrusted Site ('Open Redirect') (CWE-601)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>611</key>
@@ -910,6 +1475,11 @@
 		<severity>MAJOR</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-611)</description>
+			<defaultValue>Improper Restriction of XML External Entity Reference ('XXE') (CWE-611)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>614</key>
@@ -918,6 +1488,11 @@
 		<severity>MINOR</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-614)</description>
+			<defaultValue>Sensitive Cookie in HTTPS Session Without 'Secure' Attribute (CWE-614)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>618</key>
@@ -926,6 +1501,11 @@
 		<severity>BLOCKER</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-618)</description>
+			<defaultValue>Exposed Unsafe ActiveX Method (CWE-618)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>639</key>
@@ -934,6 +1514,11 @@
 		<severity>CRITICAL</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-639)</description>
+			<defaultValue>Authorization Bypass Through User-Controlled Key (CWE-639)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>642</key>
@@ -942,6 +1527,11 @@
 		<severity>MINOR</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-642)</description>
+			<defaultValue>External Control of Critical State Data (CWE-642)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>656</key>
@@ -950,6 +1540,11 @@
 		<severity>INFO</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-656)</description>
+			<defaultValue>Reliance on Security Through Obscurity (CWE-656)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>665</key>
@@ -958,6 +1553,11 @@
 		<severity>MINOR</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-665)</description>
+			<defaultValue>Improper Initialization (CWE-665)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>668</key>
@@ -966,6 +1566,11 @@
 		<severity>MAJOR</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-668)</description>
+			<defaultValue>Exposure of Resource to Wrong Sphere (CWE-668)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>675</key>
@@ -974,6 +1579,11 @@
 		<severity>MINOR</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-675)</description>
+			<defaultValue>Duplicate Operations on Resource (CWE-675)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>693</key>
@@ -982,6 +1592,11 @@
 		<severity>MAJOR</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-693)</description>
+			<defaultValue>Protection Mechanism Failure (CWE-693)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>708</key>
@@ -990,6 +1605,11 @@
 		<severity>CRITICAL</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-708)</description>
+			<defaultValue>Incorrect Ownership Assignment (CWE-708)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>732</key>
@@ -998,6 +1618,11 @@
 		<severity>MAJOR</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-732)</description>
+			<defaultValue>Incorrect Permission Assignment for Critical Resource (CWE-732)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>749</key>
@@ -1006,6 +1631,11 @@
 		<severity>CRITICAL</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-749)</description>
+			<defaultValue>Exposed Dangerous Method or Function (CWE-749)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>757</key>
@@ -1014,6 +1644,11 @@
 		<severity>MAJOR</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-757)</description>
+			<defaultValue>Selection of Less-Secure Algorithm During Negotiation ('Algorithm Downgrade') (CWE-757)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>760</key>
@@ -1022,6 +1657,11 @@
 		<severity>MAJOR</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-760)</description>
+			<defaultValue>Use of a One-Way Hash with a Predictable Salt (CWE-760)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>780</key>
@@ -1030,6 +1670,11 @@
 		<severity>MAJOR</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-780)</description>
+			<defaultValue>Use of RSA Algorithm without OAEP (CWE-780)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>798</key>
@@ -1038,6 +1683,11 @@
 		<severity>MAJOR</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-798)</description>
+			<defaultValue>Use of Hard-coded Credentials (CWE-798)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>829</key>
@@ -1046,6 +1696,11 @@
 		<severity>MAJOR</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-829)</description>
+			<defaultValue>Inclusion of Functionality from Untrusted Control Sphere (CWE-829)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>830</key>
@@ -1054,6 +1709,11 @@
 		<severity>MINOR</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-830)</description>
+			<defaultValue>Inclusion of Web Functionality from an Untrusted Source (CWE-830)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>915</key>
@@ -1062,6 +1722,11 @@
 		<severity>MAJOR</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-915)</description>
+			<defaultValue>Improperly Controlled Modification of Dynamically-Determined Object Attributes (CWE-915)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>916</key>
@@ -1070,6 +1735,11 @@
 		<severity>MAJOR</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-916)</description>
+			<defaultValue>Use of Password Hash With Insufficient Computational Effort (CWE-916)</defaultValue>
+		</param>
 	</rule>
 	<rule>
 		<key>943</key>
@@ -1078,5 +1748,10 @@
 		<severity>CRITICAL</severity>
 		<type>VULNERABILITY</type>
 		<tag>veracode</tag>
+		<param>
+			<key>ruletext</key>
+			<description>Here so the scanner can put in useful message text (CWE-943)</description>
+			<defaultValue>Improper Neutralization of Special Elements in Data Query Logic (CWE-943)</defaultValue>
+		</param>
 	</rule>
 </veracode-rules>

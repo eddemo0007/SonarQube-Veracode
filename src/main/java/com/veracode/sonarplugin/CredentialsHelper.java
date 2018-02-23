@@ -1,12 +1,12 @@
 package com.veracode.sonarplugin;
 
-import com.veracode.apiwrapper.AbstractAPIWrapper;
 import org.sonar.api.utils.log.Logger;
 import org.sonar.api.utils.log.Loggers;
 
+import com.veracode.apiwrapper.AbstractAPIWrapper;
+
 
 public class CredentialsHelper {	
-	//private SecurityUtils m_securityUtils;
     
     private static VeracodeSensorConfiguration m_config;
 	private final Logger log = Loggers.get(getClass());
@@ -14,7 +14,6 @@ public class CredentialsHelper {
 	public CredentialsHelper(VeracodeSensorConfiguration config)
 	{
         m_config = config;
-		//m_securityUtils = new SecurityUtils();
 	}
     
     /**

@@ -2,8 +2,11 @@ package com.veracode.sonarplugin;
 
 import java.io.ByteArrayInputStream;
 import java.nio.charset.StandardCharsets;
-//import java.util.Map;
-//import java.util.HashMap;
+//import java.io.File;
+//import java.nio.file.Path;
+//import java.nio.file.Paths;
+//import java.util.List;
+import java.util.Map;
 
 // StAX XML parser
 import javax.xml.namespace.QName;
@@ -21,8 +24,30 @@ import java.text.ParseException;
 import org.sonar.api.utils.log.Logger;
 import org.sonar.api.utils.log.Loggers;
 import org.sonar.api.batch.sensor.SensorContext;
+//import org.sonar.api.batch.sensor.issue.NewIssueLocation;
+//import org.sonar.api.batch.sensor.issue.internal.DefaultIssue;
 import org.sonar.api.batch.sensor.issue.internal.DefaultIssueLocation;
+//import org.sonar.api.batch.fs.internal.DefaultInputModule;
+//import org.sonar.api.batch.fs.internal.DefaultTextPointer;
+//import org.sonar.api.batch.fs.internal.DefaultTextRange;
+//import org.sonar.api.batch.fs.internal.SensorStrategy;
+//import org.sonar.api.batch.fs.internal.TestInputFileBuilder;
+//import org.sonar.api.batch.fs.internal.DefaultIndexedFile;
+//import org.sonar.api.batch.fs.internal.DefaultInputComponent;
+//import org.sonar.api.batch.fs.internal.DefaultInputFile;
+//import org.sonar.api.batch.fs.InputComponent;
+//import org.sonar.api.batch.fs.*;
+//import org.sonar.api.batch.fs.InputFile;
+//import org.sonar.api.batch.fs.TextPointer;
+//import org.sonar.api.batch.fs.TextRange;
+//import org.sonar.api.batch.fs.InputFile.Type;
+//import org.sonar.api.batch.sensor.issue.NewIssue;
 import org.sonar.api.rule.RuleKey;
+import org.sonar.api.batch.rule.ActiveRule;
+import org.sonar.api.batch.rule.ActiveRules;
+import org.sonar.api.batch.rule.internal.*;
+//import org.sonar.api.scan.filesystem.PathResolver.RelativePath;
+//import org.sonar.api.batch.bootstrap.ProjectDefinition;
 
 public class ParseVeracodeXML {
 	
@@ -46,7 +71,7 @@ public class ParseVeracodeXML {
 	public String getAppIDFromList(final String appName)
 	throws ParseException, XMLStreamException
 	{
-		log.info("getting AppID for " + appName);
+		log.info("Getting AppID for " + appName);
 		
 		try
 		{
@@ -89,12 +114,10 @@ public class ParseVeracodeXML {
 				}
 			}
 			
-			log.error("No app found matching name " + appName);
 			throw new ParseException("No app found matching name " + appName, 0);			
 		}
 		catch(XMLStreamException e)
 		{
-			log.error("Error reading from xml string " + e.toString());
 			throw new XMLStreamException("Error reading from xml string " + e.toString());
 		}
 	}
@@ -116,7 +139,7 @@ public class ParseVeracodeXML {
 	public BuildInformation getBuildIDFromInfo(final String appID)
 	throws ParseException, XMLStreamException
 	{
-		log.info("getting latest build info for appID = " + appID);
+		log.info("Getting latest build info for appID = " + appID);
 	
 		try
 		{
@@ -177,21 +200,19 @@ public class ParseVeracodeXML {
 				}
 			}
 			
-			//log.error("No build element in build with name " + buildName);
-			throw new ParseException("No build element in build with name " /*+ buildName*/, 0);
+			throw new ParseException("No build element found in XML", 0);
 		}
 		catch(XMLStreamException e)
 		{
-			//log.error("Error reading from xml string " + e.toString());
 			throw new XMLStreamException("Error reading from xml string " + e.toString());
 		}
 	}
 
 	// parse the detailed report from detailedreport.xsd doc (from detailedReport() )
-	public String addFlawsFromReport(SensorContext context)
+	public void addFlawsFromReport(SensorContext context)
 	throws /*ParseException, */XMLStreamException
 	{
-		//log.info("getting AppID for " + appName);
+		log.info("Reading flaws from Veracode detailed report");
 		
 		try
 		{
@@ -213,15 +234,78 @@ public class ParseVeracodeXML {
 					{
 						Attribute attribCWE = startElem.getAttributeByName(new QName("cweid"));
 						String cweID = attribCWE.getValue();
-					
+
+						Attribute attribFile = startElem.getAttributeByName(new QName("sourcefile"));
+						String sourceFile = attribFile.getValue();
+
+						Attribute attribPath = startElem.getAttributeByName(new QName("sourcefilepath"));
+						String sourcePath = attribPath.getValue();
+
+						Attribute attribDescription = startElem.getAttributeByName(new QName("description"));
+						String flawDescription = attribDescription.getValue();
+
+						Attribute attribModule = startElem.getAttributeByName(new QName("module"));
+						String moduleName = attribModule.getValue();
+
+						Attribute attribLine = startElem.getAttributeByName(new QName("line"));
+						String sourceLine = attribLine.getValue();
+
+						Attribute attribFlawID = startElem.getAttributeByName(new QName("issueid"));
+						String flawID = attribFlawID.getValue();
+
+						log.debug("adding flaw: [" + moduleName + "]" 
+										+ sourcePath + sourceFile + ":" 
+										+ sourceLine + ", cewID=" + cweID);
+
+						/** testing code 
+						// setup
+						Path flawPath = Paths.get("verademo-test/src/main/java/" + sourcePath +sourceFile);		// fudge, we don't know the absolute path
+						SensorStrategy strat = new SensorStrategy();
+
+						DefaultIndexedFile iFile = new DefaultIndexedFile(flawPath, 					// absolute path
+													"VERADEMO2",											// module key 
+													sourcePath, 										// proj relative path
+													sourcePath,  										// module relative path
+													Type.MAIN, 
+													"veracode", 
+													((DefaultInputModule)context.module()).batchId(),	//batchId
+													strat);							
+
+
+						DefaultTextPointer p1 = new DefaultTextPointer(1, 1);
+						DefaultTextPointer p2 = new DefaultTextPointer(2,2);
+						DefaultTextRange r1 = new DefaultTextRange(p1, p2);
+
+						DefaultInputModule im = new DefaultInputModule(((DefaultInputModule)context.module()).definition(),
+						((DefaultInputModule)context.module()).batchId() );
+						
+						//add paths to the ProjectDefinition
+						ProjectDefinition pd = ((DefaultInputModule)context.module()).definition();
+						log.debug("Project working dir: " + pd.getWorkDir().getAbsolutePath());
+						log.debug("Project base dir: " + pd.getBaseDir().getAbsolutePath());
+						List<String> projSources = pd.sources();
+						for(String s : projSources)
+							log.debug("Project source: " + s); 
+						*/
+
+						String msg = context.activeRules()								// ActiveRules
+									.find(RuleKey.of(VeracodeRules.REPO_KEY, cweID))	// ActiveRule
+									.param("ruletext");									// rule text
+						
 						// add the issue to SonarQube
 						context.newIssue()
 									.forRule(RuleKey.of(VeracodeRules.REPO_KEY, cweID))
-									.at(new DefaultIssueLocation().on(context.module()) /* .at?? .message?? */  )
+									.at(new DefaultIssueLocation().on( /*iFile*/ /*im*/ context.module() )
+										//.at(r1)
+										.message(msg + " - Veracode (flawID = " + flawID + ")" +
+											" [" + moduleName + "]" + sourcePath + sourceFile + ":" + sourceLine)
+										)
 									.save();
-						log.debug("flaw: CWE ID = " + cweID);
 						
-						// do I care about the 'mitigtion' field in the flaw data??
+						
+						// TODO: do I care about the 'mitigtion' field in the flaw data??
+
+						// TODO: progress counter for long reports??
 					}
 					
 					break;
@@ -234,15 +318,9 @@ public class ParseVeracodeXML {
 					break;
 				}
 			}
-			
-			//log.error("No app found matching name " + appName);
-			//throw new ParseException("No flaws found", 0);	
-			
-			return "x";
 		}
 		catch(XMLStreamException e)
 		{
-			log.error("Error reading from xml string " + e.toString());
 			throw new XMLStreamException("Error reading from xml string " + e.toString());
 		}
 	}

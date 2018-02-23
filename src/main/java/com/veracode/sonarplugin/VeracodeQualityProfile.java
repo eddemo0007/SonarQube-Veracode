@@ -4,7 +4,6 @@ import java.util.List;
 
 import org.sonar.api.server.profile.BuiltInQualityProfilesDefinition;
 import org.sonar.api.server.rule.RulesDefinition;
-//import org.sonar.api.server.rule.RulesDefinition.Context;
 import org.sonar.api.utils.log.Logger;
 import org.sonar.api.utils.log.Loggers;
 
