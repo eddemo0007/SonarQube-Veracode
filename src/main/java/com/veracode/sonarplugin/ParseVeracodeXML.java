@@ -2,11 +2,6 @@ package com.veracode.sonarplugin;
 
 import java.io.ByteArrayInputStream;
 import java.nio.charset.StandardCharsets;
-//import java.io.File;
-//import java.nio.file.Path;
-//import java.nio.file.Paths;
-//import java.util.List;
-import java.util.Map;
 
 // StAX XML parser
 import javax.xml.namespace.QName;
@@ -24,30 +19,8 @@ import java.text.ParseException;
 import org.sonar.api.utils.log.Logger;
 import org.sonar.api.utils.log.Loggers;
 import org.sonar.api.batch.sensor.SensorContext;
-//import org.sonar.api.batch.sensor.issue.NewIssueLocation;
-//import org.sonar.api.batch.sensor.issue.internal.DefaultIssue;
 import org.sonar.api.batch.sensor.issue.internal.DefaultIssueLocation;
-//import org.sonar.api.batch.fs.internal.DefaultInputModule;
-//import org.sonar.api.batch.fs.internal.DefaultTextPointer;
-//import org.sonar.api.batch.fs.internal.DefaultTextRange;
-//import org.sonar.api.batch.fs.internal.SensorStrategy;
-//import org.sonar.api.batch.fs.internal.TestInputFileBuilder;
-//import org.sonar.api.batch.fs.internal.DefaultIndexedFile;
-//import org.sonar.api.batch.fs.internal.DefaultInputComponent;
-//import org.sonar.api.batch.fs.internal.DefaultInputFile;
-//import org.sonar.api.batch.fs.InputComponent;
-//import org.sonar.api.batch.fs.*;
-//import org.sonar.api.batch.fs.InputFile;
-//import org.sonar.api.batch.fs.TextPointer;
-//import org.sonar.api.batch.fs.TextRange;
-//import org.sonar.api.batch.fs.InputFile.Type;
-//import org.sonar.api.batch.sensor.issue.NewIssue;
 import org.sonar.api.rule.RuleKey;
-import org.sonar.api.batch.rule.ActiveRule;
-import org.sonar.api.batch.rule.ActiveRules;
-import org.sonar.api.batch.rule.internal.*;
-//import org.sonar.api.scan.filesystem.PathResolver.RelativePath;
-//import org.sonar.api.batch.bootstrap.ProjectDefinition;
 
 public class ParseVeracodeXML {
 	
@@ -212,6 +185,8 @@ public class ParseVeracodeXML {
 	public void addFlawsFromReport(SensorContext context)
 	throws /*ParseException, */XMLStreamException
 	{
+		int loopCounter = 0;
+
 		log.info("Reading flaws from Veracode detailed report");
 		
 		try
@@ -253,6 +228,15 @@ public class ParseVeracodeXML {
 						Attribute attribFlawID = startElem.getAttributeByName(new QName("issueid"));
 						String flawID = attribFlawID.getValue();
 
+
+						/** testing code
+						if(flawID.equalsIgnoreCase("17"))
+						{
+							log.debug("skipping flaw " + flawID);
+							continue;
+						}
+						*/
+
 						log.debug("adding flaw: [" + moduleName + "]" 
 										+ sourcePath + sourceFile + ":" 
 										+ sourceLine + ", cewID=" + cweID);
@@ -278,16 +262,13 @@ public class ParseVeracodeXML {
 
 						DefaultInputModule im = new DefaultInputModule(((DefaultInputModule)context.module()).definition(),
 						((DefaultInputModule)context.module()).batchId() );
-						
-						//add paths to the ProjectDefinition
-						ProjectDefinition pd = ((DefaultInputModule)context.module()).definition();
-						log.debug("Project working dir: " + pd.getWorkDir().getAbsolutePath());
-						log.debug("Project base dir: " + pd.getBaseDir().getAbsolutePath());
-						List<String> projSources = pd.sources();
-						for(String s : projSources)
-							log.debug("Project source: " + s); 
 						*/
 
+						// progress counter
+						if(++loopCounter % 5 == 0)
+						{
+							log.info("Processed " + Integer.toString(loopCounter) + " flaws");
+						}
 						String msg = context.activeRules()								// ActiveRules
 									.find(RuleKey.of(VeracodeRules.REPO_KEY, cweID))	// ActiveRule
 									.param("ruletext");									// rule text
@@ -296,7 +277,7 @@ public class ParseVeracodeXML {
 						context.newIssue()
 									.forRule(RuleKey.of(VeracodeRules.REPO_KEY, cweID))
 									.at(new DefaultIssueLocation().on( /*iFile*/ /*im*/ context.module() )
-										//.at(r1)
+										//.at(r1)	// only valid for a file, and requires valid file Metadata
 										.message(msg + " - Veracode (flawID = " + flawID + ")" +
 											" [" + moduleName + "]" + sourcePath + sourceFile + ":" + sourceLine)
 										)
@@ -305,7 +286,6 @@ public class ParseVeracodeXML {
 						
 						// TODO: do I care about the 'mitigtion' field in the flaw data??
 
-						// TODO: progress counter for long reports??
 					}
 					
 					break;
