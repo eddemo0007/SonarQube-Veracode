@@ -265,10 +265,13 @@ public class ParseVeracodeXML {
 						*/
 
 						// progress counter
-						if(++loopCounter % 5 == 0)
-						{
+						if(++loopCounter % 100 == 0)
 							log.info("Processed " + Integer.toString(loopCounter) + " flaws");
-						}
+
+
+						// handle a CWE not in the Rules list
+
+
 						String msg = context.activeRules()								// ActiveRules
 									.find(RuleKey.of(VeracodeRules.REPO_KEY, cweID))	// ActiveRule
 									.param("ruletext");									// rule text
