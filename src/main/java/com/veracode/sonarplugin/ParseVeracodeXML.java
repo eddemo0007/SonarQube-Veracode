@@ -229,6 +229,8 @@ public class ParseVeracodeXML {
 						Attribute attribFlawID = startElem.getAttributeByName(new QName("issueid"));
 						String flawID = attribFlawID.getValue();
 
+						Attribute attribMitigationStatus = startElem.getAttributeByName(new QName("mitigation_status"));
+						String mitigationStatus = attribMitigationStatus.getValue();
 
 						/** testing code
 						if(flawID.equalsIgnoreCase("17"))
@@ -238,6 +240,12 @@ public class ParseVeracodeXML {
 							//continue;
 						}
 						*/
+
+						// skip mitigated flaws
+						if(mitigationStatus.equalsIgnoreCase("accepted")) {
+							log.info("Flaw ID = " + flawID + " is mitigated, skipping");
+							continue;
+						}
 
 						log.debug("adding flaw: [" + moduleName + "]" 
 										+ sourcePath + sourceFile + ":" 
@@ -289,10 +297,6 @@ public class ParseVeracodeXML {
 											" [" + moduleName + "]" + sourcePath + sourceFile + ":" + sourceLine)
 										)
 									.save();
-						
-						
-						// TODO: do I care about the 'mitigtion' field in the flaw data??
-
 					}
 					
 					break;
