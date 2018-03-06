@@ -18,6 +18,7 @@ import java.text.ParseException;
 
 import org.sonar.api.utils.log.Logger;
 import org.sonar.api.utils.log.Loggers;
+import org.sonar.api.batch.rule.ActiveRule;
 import org.sonar.api.batch.sensor.SensorContext;
 import org.sonar.api.batch.sensor.issue.internal.DefaultIssueLocation;
 import org.sonar.api.rule.RuleKey;
@@ -216,8 +217,8 @@ public class ParseVeracodeXML {
 						Attribute attribPath = startElem.getAttributeByName(new QName("sourcefilepath"));
 						String sourcePath = attribPath.getValue();
 
-						Attribute attribDescription = startElem.getAttributeByName(new QName("description"));
-						String flawDescription = attribDescription.getValue();
+						//Attribute attribDescription = startElem.getAttributeByName(new QName("description"));
+						//String flawDescription = attribDescription.getValue();
 
 						Attribute attribModule = startElem.getAttributeByName(new QName("module"));
 						String moduleName = attribModule.getValue();
@@ -232,14 +233,15 @@ public class ParseVeracodeXML {
 						/** testing code
 						if(flawID.equalsIgnoreCase("17"))
 						{
-							log.debug("skipping flaw " + flawID);
-							continue;
+							cweID = "foo";
+							//log.debug("skipping flaw " + flawID);
+							//continue;
 						}
 						*/
 
 						log.debug("adding flaw: [" + moduleName + "]" 
 										+ sourcePath + sourceFile + ":" 
-										+ sourceLine + ", cewID=" + cweID);
+										+ sourceLine + ", cweID=" + cweID);
 
 						/** testing code 
 						// setup
@@ -268,13 +270,15 @@ public class ParseVeracodeXML {
 						if(++loopCounter % 100 == 0)
 							log.info("Processed " + Integer.toString(loopCounter) + " flaws");
 
-
 						// handle a CWE not in the Rules list
+						ActiveRule rule = context.activeRules()									// ActiveRules							
+											.find(RuleKey.of(VeracodeRules.REPO_KEY, cweID));	// ActiveRule
+						if(rule == null) {
+							log.warn("Unknown CWE found, skipping.  Flaw ID = " + flawID + ", CWE ID = " + cweID);
+							continue;
+						}
 
-
-						String msg = context.activeRules()								// ActiveRules
-									.find(RuleKey.of(VeracodeRules.REPO_KEY, cweID))	// ActiveRule
-									.param("ruletext");									// rule text
+						String msg = rule.param("ruletext");
 						
 						// add the issue to SonarQube
 						context.newIssue()

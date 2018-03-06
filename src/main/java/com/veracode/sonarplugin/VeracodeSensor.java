@@ -165,5 +165,4 @@ public class VeracodeSensor implements Sensor {
     public void describe(SensorDescriptor sensorDescriptor) {
         sensorDescriptor.name(SENSOR_NAME);
     }
-
 }
