@@ -27,7 +27,7 @@ properties file, for example:
 
 `~/bin/sonar-scanner-3.1-SNAPSHOT/bin/sonar-scanner -Dsonar.veracode.apiId=XXXXX  -Dsonar.veracode.apiKey=YYYYYYYY`
     
-Support for proxies is also provided - see the sample sonar-project.properties file.
+Support for proxies is also provided - see the sample plugin-test/sonar-project.properties file.
 
 When the scanner is run it will pull the latest report from Veracode and add the Veracode issues into the project.  Some notes:
 - Since Veracode does not have the source code for the project, the issues will show up as part of the project and 
