@@ -12,3 +12,6 @@ plugin-test/verademo-test
 .project
 .classpath
 .settings/
+
+# temp ignores
+Jenkinsfile
