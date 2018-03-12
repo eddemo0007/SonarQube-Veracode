@@ -14,4 +14,4 @@ plugin-test/verademo-test
 .settings/
 
 # temp ignores
-Jenkinsfile
+#Jenkinsfile
