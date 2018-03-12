@@ -5,6 +5,8 @@ import java.text.ParseException;
 
 import javax.xml.stream.XMLStreamException;
 
+import org.apache.commons.lang3.StringUtils;
+
 import org.sonar.api.batch.sensor.Sensor;
 import org.sonar.api.batch.sensor.SensorDescriptor;
 import org.sonar.api.batch.sensor.SensorContext;
@@ -45,6 +47,12 @@ public class VeracodeSensor implements Sensor {
 
         m_appName = m_config.getAppName();
 
+        // if there is no app name skip the Veracode flaw import
+        if(StringUtils.isBlank(m_appName) ) {
+            log.info("Veracode: no appName set, skipping Veracode import.");
+            return;
+        }
+
         /**
          * pull the required report(s) from the Veracode Platform and analyze them
          */
@@ -58,7 +66,7 @@ public class VeracodeSensor implements Sensor {
             return;
         }
 
-        log.info("[Veracode] Searching for existing app: " + m_appName);
+        log.info("Searching for existing app: " + m_appName);
 
         try {
             String appListXML = m_uploadWrapper.getAppList();
@@ -89,7 +97,7 @@ public class VeracodeSensor implements Sensor {
 
         // assumes that the most current build is done scanning - how valid is this?
 
-        log.info("[Veracode] Getting info from latest build");
+        log.info("Getting info from latest build");
 
         try {
             String buildInfoXML = m_uploadWrapper.getBuildInfo(m_appID);
@@ -133,7 +141,7 @@ public class VeracodeSensor implements Sensor {
 
         // future: loop through detailed report(s)
 
-        log.info("[Veracode] Getting detailed report for build: " + m_buildInfo.m_buildName);
+        log.info("Getting detailed report for build: " + m_buildInfo.m_buildName);
 
         try {
             String detailedReportXML = m_resultsWrapper.detailedReport(m_buildInfo.m_buildID);

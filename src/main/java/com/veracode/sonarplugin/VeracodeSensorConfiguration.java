@@ -43,8 +43,6 @@ public class VeracodeSensorConfiguration {
 
     public VeracodeSensorConfiguration(SensorContext context) {
 
-        log.debug("Veracode SensorConfiguration");
-
         //m_context = context;
 
         m_veracodeAppName = context.config().get(VERACODE_APP_NAME).orElse(null);
