@@ -11,8 +11,8 @@ node {
     }
 
     stage ('upload-scan') {
-        withCredentials([ [$class: 'UsernamePasswordMultiBinding', 
-            credentialsId: 'veracode_login', passwordVariable: 'veracode_password', usernameVariable: 'veracode_username'] ]) {
+        withCredentials([ usernamePassword ( 
+            credentialsId: 'veracode_login', passwordVariable: 'veracode_password', usernameVariable: 'veracode_username') ]) {
             sh 'echo uname=$veracode_username  pwd=$veracode_password'
             veracode applicationName: 'SonarQube plugin', criticality: 'VeryHigh', fileNamePattern: '', pHost: '', pPassword: '', pUser: '', replacementPattern: '', sandboxName: '', scanExcludesPattern: '', scanIncludesPattern: '', scanName: 'Jenkins pipeline (${buildNumber})', uploadExcludesPattern: '', uploadIncludesPattern: '**/target/*.jar', useIDkey: true, vid: '${veracode_username}', vkey: '${veracode_password}', vpassword: '', vuser: ''
         }
