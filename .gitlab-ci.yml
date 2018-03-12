@@ -18,7 +18,7 @@ maven_build:
     - uname -a
     - apt-get update
     - apt-get --assume-yes install maven
-    - mvn version
+    - mvn --version
     - mvn package
 
 
