@@ -1,0 +1,23 @@
+
+stages:
+  - build
+  - scan
+
+# build job
+maven_build:
+  # jobs execute within a stage
+  stage: build
+
+  # we require a runner that has docker
+  tags:
+    - docker
+
+  # actually do the work - as a script
+  script:
+    - echo "Building"
+    - mvn package
+
+
+
+# scan
+
