@@ -14,8 +14,6 @@ public class VeracodePlugin implements Plugin  {
     @Override
     public void define(Context context) {
 
-        log.debug("Hello from the Veracode plugin");
-
         context.addExtensions(VeracodeSensor.class,
                                 VeracodeLanguage.class,
                                 VeracodeRules.class,

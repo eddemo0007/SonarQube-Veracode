@@ -10,7 +10,7 @@ placeholder
 
 Please see the RELEASE_NOTES.md file for info on what's new.
 
-Assuming you don't want to build this from scratch (see below for instructions), download the latest version from the releases directory and copy into your <SonarQube_Home>/extensions/plugins.  Then restart the SonarQube server.  See the offical SonarQube docs [here](https://docs.sonarqube.org/display/SONAR/Installing+a+Plugin) for more info and follow the "Manual Installation" process.
+Assuming you don't want to build this from scratch (see below for instructions), download the latest version from the releases directory and copy into your {SonarQube_Home}/extensions/plugins.  Then restart the SonarQube server.  See the offical SonarQube docs [here](https://docs.sonarqube.org/display/SONAR/Installing+a+Plugin) for more info and follow the "Manual Installation" process.
 
 You will probably also need the command-line sonar scanner as I haven't tested this with other SonarQube plugins
 like their Jenkins or VSTS plugin.  Or it might just work with these plugins - feedback is appreciated.
