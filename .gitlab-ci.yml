@@ -39,7 +39,7 @@ veracode_scan:
 
   # we need the output of the build job as input to this job
   dependencies:
-    - build
+    - maven_build
 
   script:
     - echo "Upload & scan"
