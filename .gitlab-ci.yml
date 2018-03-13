@@ -52,9 +52,9 @@ veracode_scan:
     - mvn --version                                     # test
     # get the Veracode API wrappers
     - mvn dependency:get -Dartifact=com.veracode.vosp.api.wrappers:vosp-api-wrappers-java:17.11.4.9
-    # find out where maven put the API wrappers
-    # - MVN_HOME=`mvn help:evaluate -Dexpression=settings.localRepository | grep -v '\[INFO\]'`
+    # find out where maven put the API wrappers - bit of a hack, but .m2 is valid for linux
     - MVN_HOME=`mvn help:evaluate -Dexpression=settings.localRepository | grep .m2`
     - echo maven home = $MVN_HOME
-    - echo end maven home
+    - java -jar $MVN_HOME/com/veracode/vosp/api/wrappers/vosp-api-wrappers-java/17.11.4.9/vosp-api-wrappers-java-17.11.4.9.jar
+    
 
