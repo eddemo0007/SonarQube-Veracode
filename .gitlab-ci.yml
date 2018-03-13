@@ -1,10 +1,10 @@
 
 stages:
-  # - build
+  - build
   - scan
 
 # build job
-maven_build:
+.maven_build:
   # run this job in the build stage
   stage: build
 
