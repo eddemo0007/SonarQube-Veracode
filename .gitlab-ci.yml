@@ -59,13 +59,14 @@ veracode_scan:
     - pwd
     - ls
     - ls target
+    - VFILE=`ls target`
     - java -jar $MVN_HOME/com/veracode/vosp/api/wrappers/vosp-api-wrappers-java/17.11.4.9/vosp-api-wrappers-java-17.11.4.9.jar
-      -vid foo
-      -vkey bar
+      -vid $VERACODE_API_ID
+      -vkey $VERACODE_API_KEY
       -action uploadandscan
       -appname "SonarQube plugin"
       -createprofile "false"
       -version foo
-      -filepath target/*.jar
+      -filepath target/$VFILE
 
 
