@@ -4,7 +4,7 @@ stages:
   - scan
 
 # build job
-.maven_build:
+maven_build:
   # run this job in the build stage
   stage: build
 
@@ -28,6 +28,7 @@ stages:
   artifacts:
     paths:
       - target/*.jar
+    expire_in: 1 hour
 
 # scan job
 veracode_scan:
@@ -40,8 +41,8 @@ veracode_scan:
     - docker
 
   # we need the output of the build job as input to this job
-  #dependencies:
-  #  - maven_build
+  dependencies:
+    - maven_build
 
   script:
     - echo "Upload & scan"
@@ -57,6 +58,7 @@ veracode_scan:
     - echo maven home = $MVN_HOME
     - pwd
     - ls
+    - ls target
     - java -jar $MVN_HOME/com/veracode/vosp/api/wrappers/vosp-api-wrappers-java/17.11.4.9/vosp-api-wrappers-java-17.11.4.9.jar
       -vid foo
       -vkey bar
