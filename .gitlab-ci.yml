@@ -61,8 +61,8 @@ veracode_scan:
     - ls target
     - VFILE=`ls target`
     - echo $VFILE
-    - echo $VERACODE_API_ID
-    - echo $VERACODE_API_KEY
+    - TIMESTAMP=`date "+%Y-%m-%d_%H:%M"`
+    - echo $TIMESTAMP
     - echo $CI_JOB_ID
     - java -jar $MVN_HOME/com/veracode/vosp/api/wrappers/vosp-api-wrappers-java/17.11.4.9/vosp-api-wrappers-java-17.11.4.9.jar
       -vid $VERACODE_API_ID
@@ -70,7 +70,5 @@ veracode_scan:
       -action uploadandscan
       -appname "SonarQube plugin"
       -createprofile "false"
-      -version GitLab-CI-$CI_JOB_ID
+      -version GitLab-CI-$TIMESTAMP-($CI_JOB_ID)
       -filepath target/$VFILE
-
-
