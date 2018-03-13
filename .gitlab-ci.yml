@@ -70,5 +70,5 @@ veracode_scan:
       -action uploadandscan
       -appname "SonarQube plugin"
       -createprofile "false"
-      -version GitLab-CI-$TIMESTAMP-($CI_JOB_ID)
+      -version "GitLab-CI-$TIMESTAMP-($CI_JOB_ID)"
       -filepath target/$VFILE
