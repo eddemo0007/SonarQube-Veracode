@@ -40,8 +40,8 @@ veracode_scan:
     - docker
 
   # we need the output of the build job as input to this job
-  dependencies:
-    - maven_build
+  #dependencies:
+  #  - maven_build
 
   script:
     - echo "Upload & scan"
