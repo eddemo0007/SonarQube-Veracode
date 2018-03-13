@@ -1,6 +1,6 @@
 
 stages:
-  - build
+  # - build
   - scan
 
 # build job
@@ -53,6 +53,8 @@ veracode_scan:
     # get the Veracode API wrappers
     - mvn dependency:get -Dartifact=com.veracode.vosp.api.wrappers:vosp-api-wrappers-java:17.11.4.9
     # find out where maven put the API wrappers
-    - MVN_HOME=`mvn help:evaluate -Dexpression=settings.localRepository | grep -v '\[INFO\]'`
+    # - MVN_HOME=`mvn help:evaluate -Dexpression=settings.localRepository | grep -v '\[INFO\]'`
+    - MVN_HOME=`mvn help:evaluate -Dexpression=settings.localRepository | grep .m2`
     - echo maven home = $MVN_HOME
+    - echo end maven home
 
