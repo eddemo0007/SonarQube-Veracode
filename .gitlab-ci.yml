@@ -5,14 +5,15 @@ stages:
 
 # build job
 maven_build:
-  # jobs execute within a stage
+  # run this job in the build stage
   stage: build
 
   # we require a runner that has docker
   tags:
     - docker
 
-  # actually do the work - as a script
+  # actually do the work - as a script (series of commands to execute)
+  #   need to install the basic tools on the Docker image (maven & java)
   script:
     - echo "Building"
     - uname -a
@@ -22,7 +23,26 @@ maven_build:
     - mvn --version
     - mvn package
 
+  # save the output from this job  
+  artifacts:
+    paths:
+      - target/*.jar
 
+# scan job
+veracode_scan:
+  # run this job in the scan stage
+  stage: scan
 
-# scan
+  # we require a runner that has docker
+  tags:
+    - docker
 
+  # we need the output of the build job as input to this job
+  dependencies:
+    - build
+
+  script:
+    - echo "Upload & scan"
+    - apt-get update
+    - apt-get --assume-yes install openjdk-8-jdk
+    - javac -version
