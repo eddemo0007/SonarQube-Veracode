@@ -55,6 +55,8 @@ veracode_scan:
     # find out where maven put the API wrappers - bit of a hack, but .m2 is valid for linux
     - MVN_HOME=`mvn help:evaluate -Dexpression=settings.localRepository | grep .m2`
     - echo maven home = $MVN_HOME
+    - pwd
+    - ls
     - java -jar $MVN_HOME/com/veracode/vosp/api/wrappers/vosp-api-wrappers-java/17.11.4.9/vosp-api-wrappers-java-17.11.4.9.jar
       -vid foo
       -vkey bar
