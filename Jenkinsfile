@@ -5,6 +5,10 @@ buildNumber = "${env.BUILD_NUMBER}"
 // run on any node
 node {
 
+    final scmVars = checkout(scm)
+    echo "scmVars: ${scmVars}"
+
+
     stage ('build') {
         git url: 'file:///Users/krise/my-repositories/sonarqube-veracode'
         def mvnHome = '/opt/apache-maven-3.3.9/bin'
@@ -16,9 +20,9 @@ node {
             sh "echo secret=$MY_SECRET"
         } */
 
-        withCredentials([ usernamePassword ( 
+        /*withCredentials([ usernamePassword ( 
             credentialsId: 'veracode_login', passwordVariable: 'VERACODE_PASSWORD', usernameVariable: 'VERACODE_USERNAME') ]) {
             veracode applicationName: 'SonarQube plugin', criticality: 'VeryHigh', fileNamePattern: '', pHost: '', pPassword: '', pUser: '', replacementPattern: '', sandboxName: '', scanExcludesPattern: '', scanIncludesPattern: '', scanName: 'Jenkins pipeline (${buildNumber})', uploadExcludesPattern: '', uploadIncludesPattern: '**/target/*.jar', useIDkey: true, vid: "${VERACODE_USERNAME}", vkey: "${VERACODE_PASSWORD}", vpassword: '', vuser: ''
-        }
+        }*/
     }
 }
