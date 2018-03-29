@@ -7,7 +7,7 @@ node {
 
     final scmVars = checkout(scm)
     echo "scmVars: ${scmVars}"
-
+    def buildVer = ${GIT_COMMIT}.substring(0,5)
 
     stage ('build') {
         git url: 'file:///Users/krise/my-repositories/sonarqube-veracode'
@@ -16,9 +16,9 @@ node {
     }
 
     stage ('upload-scan') {
-        /* withCredentials([string(credentialsId: 'secret_text', variable: 'MY_SECRET')]) {
+         withCredentials([string(credentialsId: 'secret_text', variable: 'MY_SECRET')]) {
             sh "echo secret=$MY_SECRET"
-        } */
+        } 
 
         /*withCredentials([ usernamePassword ( 
             credentialsId: 'veracode_login', passwordVariable: 'VERACODE_PASSWORD', usernameVariable: 'VERACODE_USERNAME') ]) {
