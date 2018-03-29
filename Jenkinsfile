@@ -2,15 +2,17 @@
 // env vars
 buildNumber = "${env.BUILD_NUMBER}"
 
-// run on any node
-node {
-
     final scmVars = checkout(scm)
     //echo "scmVars: ${scmVars}"
     buildVer = scmVars.GIT_COMMIT.substring(0,7)    // first 6 chars to match the short form
     echo "last commit git hash (short) = ${buildVer}"
     veracodeBuildNumber = "${buildNumber}-${buildVer}"
     echo "Veracode build ID = ${veracodeBuildNumber}"
+    
+// run on any node
+node {
+
+
 
     stage ('build') {
         git url: 'file:///Users/krise/my-repositories/sonarqube-veracode'
