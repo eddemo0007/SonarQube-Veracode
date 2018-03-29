@@ -7,7 +7,7 @@ node {
 
     final scmVars = checkout(scm)
     echo "scmVars: ${scmVars}"
-    def buildVer = ${scmVars.GIT_COMMIT}.substring(0,5)
+    def buildVer = "${scmVars.GIT_COMMIT}.substring(0,5)"
 
     stage ('build') {
         git url: 'file:///Users/krise/my-repositories/sonarqube-veracode'
