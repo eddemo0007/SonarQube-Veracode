@@ -7,8 +7,8 @@ node {
 
     final scmVars = checkout(scm)
     //echo "scmVars: ${scmVars}"
-    def buildVer = scmVars.GIT_COMMIT.substring(0,7)    // first 6 chars to match the short form
-    echo "${buildVer}"
+    buildVer = scmVars.GIT_COMMIT.substring(0,7)    // first 6 chars to match the short form
+    echo "last commit git hash (short) = ${buildVer}"
 
     stage ('build') {
         git url: 'file:///Users/krise/my-repositories/sonarqube-veracode'
@@ -23,7 +23,7 @@ node {
 
         withCredentials([ usernamePassword ( 
             credentialsId: 'veracode_login', passwordVariable: 'VERACODE_PASSWORD', usernameVariable: 'VERACODE_USERNAME') ]) {
-            veracode applicationName: 'SonarQube plugin', criticality: 'VeryHigh', fileNamePattern: '', pHost: '', pPassword: '', pUser: '', replacementPattern: '', sandboxName: '', scanExcludesPattern: '', scanIncludesPattern: '', scanName: 'Jenkins pipeline (${buildNumber}-${buildVer})', uploadExcludesPattern: '', uploadIncludesPattern: '**/target/*.jar', useIDkey: true, vid: "${VERACODE_USERNAME}", vkey: "${VERACODE_PASSWORD}", vpassword: '', vuser: ''
+            veracode applicationName: 'SonarQube plugin', criticality: 'VeryHigh', fileNamePattern: '', pHost: '', pPassword: '', pUser: '', replacementPattern: '', sandboxName: '', scanExcludesPattern: '', scanIncludesPattern: '', scanName: 'Jenkins pipeline (${buildNumber} ${buildVer})', uploadExcludesPattern: '', uploadIncludesPattern: '**/target/*.jar', useIDkey: true, vid: "${VERACODE_USERNAME}", vkey: "${VERACODE_PASSWORD}", vpassword: '', vuser: ''
         }
     }
 }
