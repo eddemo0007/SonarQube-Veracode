@@ -6,8 +6,8 @@ buildNumber = "${env.BUILD_NUMBER}"
 node {
 
     final scmVars = checkout(scm)
-    echo "scmVars: ${scmVars}"
-    def buildVer = scmVars.GIT_COMMIT.substring(0,5)
+    //echo "scmVars: ${scmVars}"
+    def buildVer = scmVars.GIT_COMMIT.substring(0,7)    // first 6 chars to match the short form
     echo "${buildVer}"
 
     stage ('build') {
@@ -17,13 +17,13 @@ node {
     }
 
     stage ('upload-scan') {
-         withCredentials([string(credentialsId: 'secret_text', variable: 'MY_SECRET')]) {
+         /*withCredentials([string(credentialsId: 'secret_text', variable: 'MY_SECRET')]) {
             sh "echo secret=$MY_SECRET"
-        } 
+        } */
 
-        /*withCredentials([ usernamePassword ( 
+        withCredentials([ usernamePassword ( 
             credentialsId: 'veracode_login', passwordVariable: 'VERACODE_PASSWORD', usernameVariable: 'VERACODE_USERNAME') ]) {
-            veracode applicationName: 'SonarQube plugin', criticality: 'VeryHigh', fileNamePattern: '', pHost: '', pPassword: '', pUser: '', replacementPattern: '', sandboxName: '', scanExcludesPattern: '', scanIncludesPattern: '', scanName: 'Jenkins pipeline (${buildNumber})', uploadExcludesPattern: '', uploadIncludesPattern: '**/target/*.jar', useIDkey: true, vid: "${VERACODE_USERNAME}", vkey: "${VERACODE_PASSWORD}", vpassword: '', vuser: ''
-        }*/
+            veracode applicationName: 'SonarQube plugin', criticality: 'VeryHigh', fileNamePattern: '', pHost: '', pPassword: '', pUser: '', replacementPattern: '', sandboxName: '', scanExcludesPattern: '', scanIncludesPattern: '', scanName: 'Jenkins pipeline (${buildNumber}-${buildVer})', uploadExcludesPattern: '', uploadIncludesPattern: '**/target/*.jar', useIDkey: true, vid: "${VERACODE_USERNAME}", vkey: "${VERACODE_PASSWORD}", vpassword: '', vuser: ''
+        }
     }
 }
