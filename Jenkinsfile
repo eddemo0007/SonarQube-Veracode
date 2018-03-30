@@ -21,8 +21,6 @@ node {
          /*withCredentials([string(credentialsId: 'secret_text', variable: 'MY_SECRET')]) {
             sh "echo secret=$MY_SECRET"
         } */
-
-        echo "upload: Veracode build ID = ${veracodeBuildNumber}"
         
         withCredentials([ usernamePassword ( 
             credentialsId: 'veracode_login', passwordVariable: 'VERACODE_PASSWORD', usernameVariable: 'VERACODE_USERNAME') ]) {
