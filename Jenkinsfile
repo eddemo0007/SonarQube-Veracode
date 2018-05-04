@@ -14,8 +14,9 @@ node {
     stage ('build') {
         git url: 'file:///Users/krise/my-repositories/sonarqube-veracode'
 
-        // mvn --version
-        def mvnHome = '/usr/local/Cellar/maven/3.5.3/libexec'
+        // mvnHome from 'mvn --version', don't forget the /bin at the end
+        // future, use the tools capability of Pipelines
+        def mvnHome = '/usr/local/Cellar/maven/3.5.3/libexec/bin'
         sh "${mvnHome}/mvn package"
     }
 
