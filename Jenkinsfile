@@ -13,7 +13,9 @@ node {
 
     stage ('build') {
         git url: 'file:///Users/krise/my-repositories/sonarqube-veracode'
-        def mvnHome = '/opt/apache-maven-3.3.9/bin'
+
+        // mvn --version
+        def mvnHome = '/usr/local/Cellar/maven/3.5.3/libexec'
         sh "${mvnHome}/mvn package"
     }
 
