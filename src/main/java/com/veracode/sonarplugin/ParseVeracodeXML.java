@@ -212,6 +212,11 @@ public class ParseVeracodeXML {
 						String cweID = attribCWE.getValue();
 
 						Attribute attribFile = startElem.getAttributeByName(new QName("sourcefile"));
+						if(attribFile == null)
+						{
+							// no source file, so either a dynamic or MPT finding
+							continue;
+						}
 						String sourceFile = attribFile.getValue();
 
 						Attribute attribPath = startElem.getAttributeByName(new QName("sourcefilepath"));

@@ -7,7 +7,7 @@
   <groupId>com.veracode.plugins</groupId>
   <artifactId>sonar-veracode-plugin</artifactId>
   <packaging>sonar-plugin</packaging>
-  <version>0.0.2</version>
+  <version>0.0.3</version>
 
   <name>Veracode plugin for SonarQube</name>
   <description>Plugin to enable integrating Veracode scan results into a SonarQube project</description>
@@ -52,7 +52,7 @@
     <dependency>
       <groupId>com.veracode.vosp.api.wrappers</groupId>
       <artifactId>vosp-api-wrappers-java</artifactId>
-      <version>17.11.4.9</version>
+      <version>21.2.7.4</version>
       <scope>compile</scope>
   </dependency>
   </dependencies>
