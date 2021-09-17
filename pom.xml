@@ -7,7 +7,7 @@
   <groupId>com.veracode.plugins</groupId>
   <artifactId>sonar-veracode-plugin</artifactId>
   <packaging>sonar-plugin</packaging>
-  <version>0.0.3</version>
+  <version>0.0.4</version>
 
   <name>Veracode plugin for SonarQube</name>
   <description>Plugin to enable integrating Veracode scan results into a SonarQube project</description>

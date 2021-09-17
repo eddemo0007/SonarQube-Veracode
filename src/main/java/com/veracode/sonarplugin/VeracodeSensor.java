@@ -23,14 +23,17 @@ public class VeracodeSensor implements Sensor {
     public static final String SENSOR_NAME = "Veracode Plugin";
     private final Logger log = Loggers.get(getClass());
 
-    private static VeracodeSensorConfiguration m_config;
-    private static CredentialsHelper m_credsHelper;
-    private static UploadAPIWrapper m_uploadWrapper;
-    private static ParseVeracodeXML.BuildInformation m_buildInfo;
-    private static ResultsAPIWrapper m_resultsWrapper;
+    private VeracodeSensorConfiguration m_config;
+    private CredentialsHelper m_credsHelper;
+    private UploadAPIWrapper m_uploadWrapper;
+    private ParseVeracodeXML.BuildInformation m_buildInfo;
+    private ResultsAPIWrapper m_resultsWrapper;
 
     private String m_appName;
     private String m_appID;
+
+    private String m_sandboxName;
+    private String m_sandboxID;
     
 
     public VeracodeSensor() {
@@ -46,6 +49,7 @@ public class VeracodeSensor implements Sensor {
         m_credsHelper = new CredentialsHelper(m_config);
 
         m_appName = m_config.getAppName();
+        m_sandboxName = m_config.getSandboxName();
 
         // if there is no app name skip the Veracode flaw import
         if(StringUtils.isBlank(m_appName) ) {
@@ -66,31 +70,20 @@ public class VeracodeSensor implements Sensor {
             return;
         }
 
-        log.info("Searching for existing app: " + m_appName);
-
-        try {
-            String appListXML = m_uploadWrapper.getAppList();
-            log.debug("App List XML: " + appListXML);
-
-            try {
-                // parse the XML and get the appID
-                ParseVeracodeXML parser = new ParseVeracodeXML(appListXML);
-
-                m_appID = parser.getAppIDFromList(m_appName);
-                log.info("Found existing app with ID = " + m_appID);
-            }
-            catch (ParseException p) {
-                log.error("Parsing error " + p.toString());
-                return;
-            }
-            catch (XMLStreamException x) {
-                log.error("XML Stream error " + x.toString());
-                return;
-            }
-        }
-        catch (IOException e) {
-            log.error("Error getting the app list: Exception " + e.toString());
+        m_appID = getAppID();
+        if (StringUtils.isBlank(m_appID)) {
             return;
+        }
+
+        log.info("Found existing app with ID = " + m_appID);
+
+        if(!StringUtils.isBlank(m_sandboxName) ) {
+            m_sandboxID = getSandboxID();
+            if (StringUtils.isBlank(m_sandboxID)) {
+                return;
+            }
+
+            log.info("Found existing sandbox with ID = " + m_sandboxID);
         }
 
         // get latest build (Future: of required type(s))
@@ -100,7 +93,7 @@ public class VeracodeSensor implements Sensor {
         log.info("Getting info from latest build");
 
         try {
-            String buildInfoXML = m_uploadWrapper.getBuildInfo(m_appID);
+            String buildInfoXML = m_uploadWrapper.getBuildInfo(m_appID, "", m_sandboxID);
             log.debug("Build Info XML: " + buildInfoXML);
 
             try {
@@ -173,4 +166,62 @@ public class VeracodeSensor implements Sensor {
     public void describe(SensorDescriptor sensorDescriptor) {
         sensorDescriptor.name(SENSOR_NAME);
     }
+
+
+    private String getAppID()
+    {
+        log.info("Searching for existing app: " + m_appName);
+
+        try {
+            String appListXML = m_uploadWrapper.getAppList();
+            log.debug("App List XML: " + appListXML);
+
+            try {
+                // parse the XML and get the appID
+                ParseVeracodeXML parser = new ParseVeracodeXML(appListXML);
+
+                return parser.getAppIDFromList(m_appName);
+            }
+            catch (ParseException p) {
+                log.error("Parsing error " + p.toString());
+            }
+            catch (XMLStreamException x) {
+                log.error("XML Stream error " + x.toString());
+            }
+        }
+        catch (IOException e) {
+            log.error("Error getting the app list: Exception " + e.toString());
+        }
+
+        return null;
+    }
+
+    private String getSandboxID()
+    {
+        log.info("Searching for sandbox: " + m_sandboxName);
+
+        try {
+            String sandboxListXML = m_uploadWrapper.getSandboxList(m_appID);
+            log.debug("Sandbox List XML: " + sandboxListXML);
+
+            try {
+                // parse the XML and get the appID
+                ParseVeracodeXML parser = new ParseVeracodeXML(sandboxListXML);
+
+                return parser.getSandboxIDFromList(m_sandboxName);
+            }
+            catch (ParseException p) {
+                log.error("Parsing error " + p.toString());
+            }
+            catch (XMLStreamException x) {
+                log.error("XML Stream error " + x.toString());
+            }
+        }
+        catch (IOException e) {
+            log.error("Error getting the sandbox list: Exception " + e.toString());
+        }
+
+        return null;
+    }
+
 }
