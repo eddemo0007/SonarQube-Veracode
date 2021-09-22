@@ -45,7 +45,20 @@ public class ParseVeracodeXML {
 	public String getAppIDFromList(final String appName)
 	throws ParseException, XMLStreamException
 	{
-		log.info("Getting AppID for " + appName);
+		return getElementIDFromList("app", appName);
+	}
+
+	// get the sandbox ID from sandbolist.xsd doc (from getSendboxList(appID) )
+	public String getSandboxIDFromList(final String sandboxName)
+	throws ParseException, XMLStreamException
+	{
+		return getElementIDFromList("sandbox", sandboxName);
+	}
+
+	private String getElementIDFromList(final String elementType, final String elementName)
+	throws ParseException, XMLStreamException
+	{
+		log.info("Getting " + elementType + " ID for " + elementName);
 		
 		try
 		{
@@ -62,18 +75,18 @@ public class ParseVeracodeXML {
 					StartElement startElem = event.asStartElement();
 					String eName = startElem.getName().getLocalPart();
 					
-					// find an 'app' element with the matching name
-					if(eName.equalsIgnoreCase("app"))
+					// find an element with the matching name
+					if(eName.equalsIgnoreCase(elementType))
 					{
-						Attribute attribName = startElem.getAttributeByName(new QName("app_name"));
+						Attribute attribName = startElem.getAttributeByName(new QName(elementType + "_name"));
 						String name = attribName.getValue();
 						
-						Attribute attribID = startElem.getAttributeByName(new QName("app_id"));
+						Attribute attribID = startElem.getAttributeByName(new QName(elementType + "_id"));
 						String id = attribID.getValue();
 						
 						log.debug("attribName = " + name + ",  attribID = " + id);
 						
-						if(name.equals(appName) )
+						if(name.equals(elementName) )
 							return id;
 					}
 					
@@ -88,7 +101,7 @@ public class ParseVeracodeXML {
 				}
 			}
 			
-			throw new ParseException("No app found matching name " + appName, 0);			
+			throw new ParseException("No " + elementType + " found matching name " + elementName, 0);			
 		}
 		catch(XMLStreamException e)
 		{

@@ -19,6 +19,7 @@ like their Jenkins or VSTS plugin.  Or it might just work with these plugins - f
 
 There are a few properties that need to get set in the sonar-project.properties file:
 - sonar.veracode.appName=Name of your app as it appears on the Veracode Platform
+- sonar.veracode.sandboxName=Name of your sandbox as it appears on the Veracode Platform (optional)
 - sonar.veracode.apiId=API ID for the account that will access the Veracode Platform
 - sonar.veracode.apiKey=API Key for the account that will access the Veracode Platform
 

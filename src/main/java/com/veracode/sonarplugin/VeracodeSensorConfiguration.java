@@ -17,6 +17,7 @@ public class VeracodeSensorConfiguration {
     private final Logger log = Loggers.get(getClass());
     //private final SensorContext m_context;
     private static String m_veracodeAppName;
+    private static String m_veracodeSandboxName;
     //private static String m_veracodeScanType;
     private static String m_veracodeApiId;
     private static String m_veracodeApiKey;
@@ -32,6 +33,7 @@ public class VeracodeSensorConfiguration {
     */
 
     private static final String VERACODE_APP_NAME = "sonar.veracode.appName";
+    private static final String VERACODE_SANDBOX_NAME = "sonar.veracode.sandboxName";
     //private static final String VERACODE_SCAN_TYPE = "sonar.veracode.scanType";
     private static final String VERACODE_API_ID = "sonar.veracode.apiId";
     private static final String VERACODE_API_KEY = "sonar.veracode.apiKey";
@@ -46,6 +48,7 @@ public class VeracodeSensorConfiguration {
         //m_context = context;
 
         m_veracodeAppName = context.config().get(VERACODE_APP_NAME).orElse(null);
+        m_veracodeSandboxName = context.config().get(VERACODE_SANDBOX_NAME).orElse(null);
         //m_veracodeScanType = context.config().get(VERACODE_SCAN_TYPE).orElse(null);
         m_veracodeApiId = context.config().get(VERACODE_API_ID).orElse(null);
         m_veracodeApiKey = context.config().get(VERACODE_API_KEY).orElse(null);
@@ -64,6 +67,10 @@ public class VeracodeSensorConfiguration {
 
     public String getAppName() {
         return m_veracodeAppName;
+    }
+
+    public String getSandboxName() {
+        return m_veracodeSandboxName;
     }
 
     public String getApiId() {
