@@ -5,6 +5,7 @@ import org.sonar.api.utils.log.Logger;
 import org.sonar.api.utils.log.Loggers;
 
 import com.veracode.apiwrapper.AbstractAPIWrapper;
+import com.veracode.http.Credentials;
 
 
 public class CredentialsHelper {	
@@ -25,7 +26,7 @@ public class CredentialsHelper {
         log.debug("Setting up API creds");
         
         try {
-            wrapper.setUpApiCredentials(m_config.getApiId(), m_config.getApiKey());
+            wrapper.setUpApiCredentials(Credentials.create(m_config.getApiId(), m_config.getApiKey()) ); 
         }
         catch(IllegalArgumentException e) {
             // this can get thrown if the API Key is bogus

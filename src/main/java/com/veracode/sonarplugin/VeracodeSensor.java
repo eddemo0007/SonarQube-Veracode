@@ -10,9 +10,6 @@ import org.apache.commons.lang3.StringUtils;
 import org.sonar.api.batch.sensor.Sensor;
 import org.sonar.api.batch.sensor.SensorDescriptor;
 import org.sonar.api.batch.sensor.SensorContext;
-//import org.sonar.api.batch.fs.FileSystem;
-//import org.sonar.api.batch.rule.Rules;
-//import org.sonar.api.scan.filesystem.PathResolver;
 import org.sonar.api.utils.log.Logger;
 import org.sonar.api.utils.log.Loggers;
 
@@ -26,6 +23,7 @@ public class VeracodeSensor implements Sensor {
     private VeracodeSensorConfiguration m_config;
     private CredentialsHelper m_credsHelper;
     private UploadAPIWrapper m_uploadWrapper;
+    private SandboxAPIWrapper m_sandboxWrapper;
     private ParseVeracodeXML.BuildInformation m_buildInfo;
     private ResultsAPIWrapper m_resultsWrapper;
 
@@ -201,7 +199,7 @@ public class VeracodeSensor implements Sensor {
         log.info("Searching for sandbox: " + m_sandboxName);
 
         try {
-            String sandboxListXML = m_uploadWrapper.getSandboxList(m_appID);
+            String sandboxListXML = m_sandboxWrapper.getSandboxList(m_appID);
             log.debug("Sandbox List XML: " + sandboxListXML);
 
             try {

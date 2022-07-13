@@ -1,8 +1,6 @@
 package com.veracode.sonarplugin;
 
-import org.sonar.api.batch.ScannerSide;
 import org.sonar.api.batch.sensor.SensorContext;
-//import org.sonar.api.config.Configuration;
 import org.sonar.api.utils.log.Logger;
 import org.sonar.api.utils.log.Loggers;
 
@@ -11,11 +9,9 @@ import org.sonar.api.utils.log.Loggers;
  * and make the veracode ones available to the sonar-scanner
  */
 
-@ScannerSide
 public class VeracodeSensorConfiguration {
 
     private final Logger log = Loggers.get(getClass());
-    //private final SensorContext m_context;
     private static String m_veracodeAppName;
     private static String m_veracodeSandboxName;
     //private static String m_veracodeScanType;
@@ -44,9 +40,6 @@ public class VeracodeSensorConfiguration {
 
 
     public VeracodeSensorConfiguration(SensorContext context) {
-
-        //m_context = context;
-
         m_veracodeAppName = context.config().get(VERACODE_APP_NAME).orElse(null);
         m_veracodeSandboxName = context.config().get(VERACODE_SANDBOX_NAME).orElse(null);
         //m_veracodeScanType = context.config().get(VERACODE_SCAN_TYPE).orElse(null);
@@ -60,9 +53,6 @@ public class VeracodeSensorConfiguration {
 
         log.debug("Veracode app name = " + m_veracodeAppName);
         log.debug("Veracode API ID = " + m_veracodeApiId);
-
-        // TODO: encryption on the API key?
-
     }
 
     public String getAppName() {

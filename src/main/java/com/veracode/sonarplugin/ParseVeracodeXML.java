@@ -10,8 +10,6 @@ import javax.xml.stream.XMLInputFactory;
 import javax.xml.stream.XMLStreamConstants;
 import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.events.Attribute;
-//import javax.xml.stream.events.Characters;
-//import javax.xml.stream.events.EndElement;
 import javax.xml.stream.events.StartElement;
 import javax.xml.stream.events.XMLEvent;
 import java.text.ParseException;
@@ -20,7 +18,7 @@ import org.sonar.api.utils.log.Logger;
 import org.sonar.api.utils.log.Loggers;
 import org.sonar.api.batch.rule.ActiveRule;
 import org.sonar.api.batch.sensor.SensorContext;
-import org.sonar.api.batch.sensor.issue.internal.DefaultIssueLocation;
+import org.sonar.api.batch.sensor.issue.NewIssue;
 import org.sonar.api.rule.RuleKey;
 
 public class ParseVeracodeXML {
@@ -307,14 +305,16 @@ public class ParseVeracodeXML {
 						String msg = rule.param("ruletext");
 						
 						// add the issue to SonarQube
-						context.newIssue()
-									.forRule(RuleKey.of(VeracodeRules.REPO_KEY, cweID))
-									.at(new DefaultIssueLocation().on( /*iFile*/ /*im*/ context.module() )
-										//.at(r1)	// only valid for a file, and requires valid file Metadata
-										.message(msg + " - Veracode (flawID = " + flawID + ")" +
-											" [" + moduleName + "]" + sourcePath + sourceFile + ":" + sourceLine)
-										)
-									.save();
+						NewIssue newIssue = context.newIssue();
+						newIssue
+							.forRule(RuleKey.of(VeracodeRules.REPO_KEY, cweID))
+							.at(newIssue.newLocation()
+								.on( /*iFile*/ /*im*/ /*context.module()*/ context.project() )
+								//.at(r1)	// only valid for a file, and requires valid file Metadata
+								.message(msg + " - Veracode (flawID = " + flawID + ")" +
+										" [" + moduleName + "]" + sourcePath + sourceFile + ":" + sourceLine)
+									)
+							.save();
 					}
 					
 					break;

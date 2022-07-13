@@ -14,11 +14,8 @@ public class VeracodeLanguage extends AbstractLanguage {
     public static final String NAME = "Veracode";
     public static final String KEY = "veracode";
 
-    //private final Configuration m_config;
-
     public VeracodeLanguage (Configuration config) {
         super(KEY, NAME);
-        //m_config = config;
     }
 
     // not sure if I need this, but make a dummy file extension
