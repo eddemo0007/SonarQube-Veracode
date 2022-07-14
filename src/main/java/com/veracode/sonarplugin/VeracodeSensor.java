@@ -64,7 +64,7 @@ public class VeracodeSensor implements Sensor {
 
         if(!m_credsHelper.setUpCredentials(m_uploadWrapper))
         {
-            log.error("Error setting up the Veracode credentials, skipping Veracode analysis");
+            log.error("Error setting up the Veracode credentials for the uploadWrapper, skipping Veracode analysis");
             return;
         }
 
@@ -76,6 +76,14 @@ public class VeracodeSensor implements Sensor {
         log.info("Found existing app with ID = " + m_appID);
 
         if(!StringUtils.isBlank(m_sandboxName) ) {
+            m_sandboxWrapper = new SandboxAPIWrapper();
+
+            if(!m_credsHelper.setUpCredentials(m_sandboxWrapper))
+            {
+                log.error("Error setting up the Veracode credentials for the sandboxWrapper, skipping Veracode analysis");
+                return;
+            }
+
             m_sandboxID = getSandboxID();
             if (StringUtils.isBlank(m_sandboxID)) {
                 return;
@@ -196,7 +204,7 @@ public class VeracodeSensor implements Sensor {
 
     private String getSandboxID()
     {
-        log.info("Searching for sandbox: " + m_sandboxName);
+        log.info("Searching for sandbox: " + m_sandboxName + " for App " + m_appName + " (ID=" + m_appID + ")");
 
         try {
             String sandboxListXML = m_sandboxWrapper.getSandboxList(m_appID);
@@ -221,5 +229,4 @@ public class VeracodeSensor implements Sensor {
 
         return null;
     }
-
 }

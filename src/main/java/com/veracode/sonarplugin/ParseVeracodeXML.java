@@ -263,6 +263,16 @@ public class ParseVeracodeXML {
 							continue;
 						}
 
+						Attribute attribRemediationStatus = startElem.getAttributeByName(new QName("remediation_status"));
+						String remediationStatus = attribRemediationStatus.getValue();
+
+						// skip remediated flaws
+						if(remediationStatus.equalsIgnoreCase("fixed")) {
+							log.info("Flaw ID = " + flawID + " is remediated, skipping");
+							continue;
+						}
+						
+						
 						log.debug("adding flaw: [" + moduleName + "]" 
 										+ sourcePath + sourceFile + ":" 
 										+ sourceLine + ", cweID=" + cweID);
@@ -312,7 +322,7 @@ public class ParseVeracodeXML {
 								.on( /*iFile*/ /*im*/ /*context.module()*/ context.project() )
 								//.at(r1)	// only valid for a file, and requires valid file Metadata
 								.message(msg + " - Veracode (flawID = " + flawID + ")" +
-										" [" + moduleName + "]" + sourcePath + sourceFile + ":" + sourceLine)
+										" [" + moduleName + "] " + sourcePath + sourceFile + ":" + sourceLine)
 									)
 							.save();
 					}
