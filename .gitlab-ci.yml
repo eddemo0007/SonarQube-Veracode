@@ -4,25 +4,14 @@ stages:
   - scan
 
 # build job
-maven_build:
-  # run this job in the build stage
+build_app:
   stage: build
-
-  # we require a runner that has docker
-  tags:
-    - docker
+  image: maven:3.6.3-openjdk-8
 
   # actually do the work - as a script (series of commands to execute)
   #   need to install the basic tools on the Docker image (maven & java)
   script:
-    - echo "Building"
-    - uname -a                                            # just because
-    - apt-get update
-    - apt-get --assume-yes install openjdk-8-jdk
-    - apt-get --assume-yes install maven
-    - javac -version                                      # test
-    - mvn --version                                       # test
-    - mvn package
+    - mvn clean package
 
   # save the output from this job  
   artifacts:
@@ -32,39 +21,16 @@ maven_build:
 
 # scan job
 veracode_scan:
-  # run this job in the scan stage
   stage: scan
-
-  # we require a linux-based runner that has docker
-  tags:
-    - linux
-    - docker
-
-  # we need the output of the build job as input to this job
-  dependencies:
-    - maven_build
+  image: veracode/api-wrapper-java:latest
 
   script:
-    - echo "Upload & scan"
-    - apt-get update
-    - apt-get --assume-yes install openjdk-8-jdk
-    - apt-get --assume-yes install maven
-    - javac -version                                    # test
-    - mvn --version                                     # test
-    # get the Veracode API wrappers
-    - mvn dependency:get -Dartifact=com.veracode.vosp.api.wrappers:vosp-api-wrappers-java:17.11.4.9
-    # find out where maven put the API wrappers - bit of a hack, but .m2 is valid for linux
-    - MVN_HOME=`mvn help:evaluate -Dexpression=settings.localRepository | grep .m2`
-    - echo maven home = $MVN_HOME
-    - pwd
-    - ls
-    - ls target
     - VFILE=`ls target`
     - echo $VFILE
     - TIMESTAMP=`date "+%Y-%m-%d_%H:%M"`
     - echo $TIMESTAMP
     - echo $CI_JOB_ID
-    - java -jar $MVN_HOME/com/veracode/vosp/api/wrappers/vosp-api-wrappers-java/17.11.4.9/vosp-api-wrappers-java-17.11.4.9.jar
+    - java -jar /opt/veracode/api-wrapper.jar
       -vid $VERACODE_API_ID
       -vkey $VERACODE_API_KEY
       -action uploadandscan
